@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <sceneobject>
+    <model path="Models/Switch_Type_A.dae">
+      <clip distance="50"/>
+    </model>
+    <param playkeyframeloop="true"/>
+    <param randomkeyframestart="true"/>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="1" g="1" b="1"/>
+    </usercolor>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="1" g="1" b="1"/>
+    </usercolor>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="1" g="1" b="1"/>
+    </usercolor>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="0.521569" g="0.521569" b="0.521569"/>
+    </usercolor>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="0.247059" g="0.247059" b="0.247059"/>
+    </usercolor>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="0.141176" g="0.141176" b="0.141176"/>
+    </usercolor>
+    <script>
+      <classpath>Scripts</classpath>
+      <class>Person</class>
+      <sharedvm>true</sharedvm>
+    </script>
+    <materialpath name="LongSleeve">Materials/ShirtLower.nl2mat</materialpath>
+    <materialpath name="ShirtSleeve">Materials/ShirtUpper.nl2mat</materialpath>
+    <materialpath name="Shirt_Lower">Materials/Shirt.nl2mat</materialpath>
+    <materialpath name="Shirt_Upper">Materials/Shirt.nl2mat</materialpath>
+    <materialpath name="Shoes">Materials/Hair.nl2mat</materialpath>
+    <materialpath name="Shorts">Materials/Trousers.nl2mat</materialpath>
+    <materialpath name="TexturedMan">Materials/Skin.nl2mat</materialpath>
+    <materialpath name="Trousers">Materials/TrousersLower.nl2mat</materialpath>
+  </sceneobject>
+</root>

@@ -1,0 +1,305 @@
+import com.nolimitscoaster.*;
+import nlvm.math3d.*;
+
+public class Person extends Script{
+	
+	private int lastNode = 0;
+	private int currentNode = 0;
+	private int nextNode = 0;
+	private bool placed = false;
+	
+	private float speed = 1.0f + (float)(Math.random() * 1.0f);
+	private float distance = 0;
+	private float pos = 0;
+	
+	//Colour choices;
+	Vector4f[] shorts = {
+		new Vector4f(130.0f/255.0f, 158.0f/255.0f, 204.0f/255.0f, 1.0f),
+		new Vector4f(161.0f/255.0f, 165.0f/255.0f, 173.0f/255.0f, 1.0f),
+		new Vector4f(226.0f/255.0f, 214.0f/255.0f, 181.0f/255.0f, 1.0f),
+		new Vector4f(100.0f/255.0f, 116.0f/255.0f, 150.0f/255.0f, 1.0f)
+	};
+	Vector4f[] shirts = {
+		new Vector4f(76.0f/255.0f, 133.0f/255.0f, 224.0f/255.0f, 1.0f),
+		new Vector4f(27.0f/255.0f, 66.0f/255.0f, 130.0f/255.0f, 1.0f),
+		new Vector4f(165.0f/255.0f, 181.0f/255.0f, 209.0f/255.0f, 1.0f),
+		new Vector4f(232.0f/255.0f, 232.0f/255.0f, 232.0f/255.0f, 1.0f),
+		new Vector4f(219.0f/255.0f, 67.0f/255.0f, 67.0f/255.0f, 1.0f),
+		new Vector4f(121.0f/255.0f, 140.0f/255.0f, 93.0f/255.0f, 1.0f),
+		new Vector4f(109.0f/255.0f, 124.0f/255.0f, 86.0f/255.0f, 1.0f),
+		new Vector4f(56.0f/255.0f, 53.0f/255.0f, 68.0f/255.0f, 1.0f),
+		new Vector4f(109.0f/255.0f, 104.0f/255.0f, 130.0f/255.0f, 1.0f),
+		new Vector4f(139.0f/255.0f, 178.0f/255.0f, 175.0f/255.0f, 1.0f),
+		new Vector4f(135.0f/255.0f, 135.0f/255.0f, 135.0f/255.0f, 1.0f)
+	};
+	
+	//Animation Ranges
+	private float frameRate = 24;
+	private float animationLength = 20/frameRate;
+	public float walking = 0/frameRate;
+	public float sitting = 30/frameRate;
+	
+	private float currentAnim = walking;
+	private float currentFrame = (float) Math.random() * animationLength;
+	
+	//Body Parts
+	SceneObjectElement head;
+	SceneObjectElement chest;
+	
+	//Physical Characteristics
+	float height = ((float)Math.random()*0.25f + 0.75f) * 1.1f;
+	
+	//Temporary Variables
+	Coaster nearestCoaster = null;
+	Train nearestTrain = null;
+	bool stopped = false;
+	bool boarded = false;
+	bool inRange = true;
+	SceneObjectElement boardObject;
+	
+	
+	Vector4f shirt = shirts[(int)((float)Math.random() * (float)shirts.length)];
+	Vector4f trousers = shorts[(int)((float)Math.random() * (float)shorts.length)];
+	
+	float skinTone = (float)Math.random()* 0.75f + 0.25f;
+	Vector4f skin = new Vector4f(255.0f/255.0f*skinTone,224.0f/255.0f*skinTone,189.0f/255.0f*skinTone,1);
+	
+	float hairTone = (float)Math.random()/3.0f;
+	Vector4f hair = new Vector4f(250.0f/255.0f*hairTone,240.0f/255.0f*hairTone,190.0f/255.0f*hairTone,1);
+	
+	Vector3f posCur = new Vector3f(0,0,0);
+	Vector3f posNext = new Vector3f(0,0,0);
+	float xOffset = 0;
+	float yOffset = 0;
+	float zOffset = 0;
+	
+	float currentHeading = 0;
+	float desiredHeading = 0;
+	float turnRate = 3.0f;
+	
+	private SceneObject sco;
+	
+	public bool onInit(){
+		
+		sco = sim.getSceneObjectForEntityId(getParentEntityId());
+		
+		head = sco.getElementForName("Head");
+		chest = sco.getElementForName("Chest");
+		
+		float random = (float)Math.random();
+		
+		for (int i = 0; i < sco.getElementCount(); i++) {
+			
+			sco.getElementAt(i).setEntityColor(0, shirt);
+			sco.getElementAt(i).setEntityColor(1, trousers);
+			sco.getElementAt(i).setEntityColor(2, trousers);
+			sco.getElementAt(i).setEntityColor(3, skin);
+			sco.getElementAt(i).setEntityColor(5, shirt);
+			sco.getElementAt(i).setEntityColor(4, shirt);
+			if(random > 0.5) {
+				
+				sco.getElementAt(i).setEntityColor(5, skin);
+				
+				if (random > 0.75) {
+					
+					sco.getElementAt(i).setEntityColor(4, skin);
+					
+				}
+			}
+		}
+		
+		sco.setScale(height, height, height);
+		
+		return true;
+		
+	}
+	
+	public void setAnimation(float anim) {
+		
+		currentAnim = anim;
+		
+	}
+	
+	float temp = 0;
+	
+	public void getNextNode() {
+		
+		currentNode = nextNode;
+		
+		if (NodeNetwork.getNodeForID(currentNode).TYPE == Node.BOARD) {
+			
+			Node cn = NodeNetwork.getNodeForID(currentNode);
+			
+			nextNode = currentNode;
+			stopped = true;
+			
+			pos = 1;
+			
+			if (!boarded) {
+				
+				
+				boardObject = sim.getSceneObject(cn.sco.getStringParameter("SceneObject")).getElementForName(cn.sco.getStringParameter("SceneObjectElement"));
+				
+				if (boardObject != null) {
+					
+					currentAnim = sitting;
+					boarded = true;
+					
+				}
+				
+			}
+			
+		} else {
+		
+		
+		posCur = posNext.dup();
+		
+		Node nodes[] = NodeNetwork.getNodeForID(currentNode).getConnections();
+		int count = NodeNetwork.getNodeForID(currentNode).getConnectionCount();
+		
+		
+		Node temp = nodes[(int)((float)Math.random() * (float)count)];
+		nextNode = temp.ID;
+		
+		int tries = 0;
+		
+		while ((nextNode == lastNode || nextNode == 0 || temp.blocked == true) && tries < 20) {
+			
+			temp = nodes[(int)((float)Math.random() * (float)count)];
+			nextNode = temp.ID;
+			
+			tries++;
+		}
+		
+		if (nextNode == lastNode || nextNode == 0 || temp.blocked == true) {
+			
+			placed = false;
+			
+		}
+		
+		posNext = NodeNetwork.getNodeForID(nextNode).sco.getTranslation();
+		
+		float x = posCur.x - posNext.x;
+		float y = posCur.y - posNext.y;
+		float z = posCur.z - posNext.z;
+		
+		xOffset = -x;
+		yOffset = -y;
+		zOffset = -z;
+		
+		distance = (float) Math.sqrt((x*x) + (y*y) + (z*z));
+		
+		}
+		
+	}
+	  
+	public void onNextFrame(float time){
+		
+		if	(NodeNetwork.sorted && !placed) {
+			
+			nextNode = (int)((float)Math.random() * (float)NodeNetwork.nodeCount);
+			
+			while (NodeNetwork.getNodeForID(nextNode).blocked == true) {
+				
+				nextNode = (int)((float)Math.random() * (float)NodeNetwork.nodeCount);
+				
+			}
+			
+			currentNode = nextNode;
+			lastNode = currentNode;
+		
+			posCur = NodeNetwork.getNodeForID(currentNode).sco.getTranslation();
+			posNext = NodeNetwork.getNodeForID(currentNode).sco.getTranslation();
+		
+			placed = true;
+			getNextNode();
+			
+		}
+		
+		Vector3f viewPos = new Vector3f();
+		Vector3f scoPos = sco.getTranslation();
+		sim.getViewPos(viewPos);
+		float viewDistance = ((viewPos.x-scoPos.x)*(viewPos.x-scoPos.x)) + ((viewPos.y-scoPos.y)*(viewPos.y-scoPos.y)) + ((viewPos.z-scoPos.z)*(viewPos.z-scoPos.z));
+		
+		if (placed && inRange) {
+			
+			// Animations
+			
+			if (currentFrame < animationLength) {
+				
+				currentFrame += sim.getCurSimulationTickSec() * speed / 2.0f;
+				if(currentFrame > animationLength){
+					
+					currentFrame = 0;
+					
+				}
+				sco.setKeyFrameAnimationTime(currentFrame + currentAnim);
+				
+			}
+			
+			desiredHeading = (float)Math.atan2(xOffset,zOffset) - (float)Math.PI/2.0f;
+			
+			if (currentHeading < desiredHeading) {
+				
+				currentHeading += (float)Math.abs(currentHeading-desiredHeading) * turnRate * sim.getCurSimulationTickSec();
+				
+			}
+			if (currentHeading > desiredHeading) {
+				
+				currentHeading -= (float)Math.abs(currentHeading-desiredHeading) * turnRate * sim.getCurSimulationTickSec();
+				
+			}
+			
+			head.setRotation(0,desiredHeading-currentHeading,0);
+			
+			if (boarded) {
+				
+				Vector3f pos = new Vector3f(0,0,0);
+				Vector3f rot = new Vector3f(0,0,0);
+				Matrix4x4f car = boardObject.getAbsoluteMatrix();
+				Matrix4x4f rotM = new Matrix4x4f();
+				rotM.initYRot((float)Math.PI/2.0f);
+				car.multRight(rotM);
+				Tools.matrixToPitchHeadBankPos(car, rot, pos);
+				
+				sco.setTranslation(pos);
+				sco.setRotation(rot.x, rot.y, rot.z);
+				
+			} else {
+				
+				sco.setRotation(0,currentHeading,0);
+				sco.setTranslation(posCur.x + (xOffset * pos),
+				posCur.y + (yOffset * pos) -0.25f,
+				posCur.z + (zOffset * pos));
+				
+			}
+			
+			
+			if (!stopped) {
+			
+				pos += speed / distance * sim.getCurSimulationTickSec();
+			
+			}
+			
+			if(pos > 1){
+				
+				pos = 0;
+				getNextNode();
+				
+			}	
+			
+		}
+		
+		if (viewDistance < 10000) {
+			
+			inRange = true;
+			
+		} else {
+			
+			inRange = false;
+			
+		}
+		
+	}
+	
+}

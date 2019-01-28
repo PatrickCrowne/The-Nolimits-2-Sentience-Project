@@ -1,0 +1,62 @@
+import com.nolimitscoaster.*;
+
+public class NodeNetwork extends Script{
+	
+	public static Node[] nodes = new Node[2000];
+	public static int nodeCount = 0;
+	
+	public static bool sorted = false;
+	
+	public bool onInit(){
+		
+		
+	
+		return true;
+		
+	}
+	 
+	public static Node getNodeForID(int id){
+		
+		for (int i = 0; i < nodeCount; i++) {
+			
+			if(nodes[i].ID == id)
+				return nodes[i];
+			
+		}
+		
+		return null;
+		
+	}
+	 
+	public static void addNode(Node n){
+		
+		nodes[nodeCount] = n;
+		nodeCount++;
+		
+	}
+	  
+	double delay = 0;
+	  
+	public void onNextFrame(float fTickTime){
+		
+		delay += sim.getCurSimulationTickSec();
+		
+		if(!sorted && delay > 1){
+			
+			nodes = Triangulation.triangulateNodes(nodes, nodeCount);
+			for(int i = 0; i < nodeCount; i++){
+				
+				nodes[i].updateConnections();
+				
+			}
+			
+			sorted = true;
+			
+			
+			
+			
+		}
+		
+	}
+	
+}

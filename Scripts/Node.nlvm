@@ -1,0 +1,102 @@
+import com.nolimitscoaster.*;
+import nlvm.math3d.*;
+
+public class Node	{
+	
+	public int ID = 0;
+	public bool blocked = false;
+	public int TYPE = 0;
+	public static final int DEFAULT = 0;
+	public static final int BLOCKED = 1;
+	public static final int PATH = 2;
+	public static final int BOARD = 3;
+	
+	public SceneObject sco;
+	private SceneObjectElement[] scoe = new SceneObjectElement[7];
+	public double x, y;
+	
+	public int connections = 0;
+	public Node[] connection = new Node[70];
+	public double[] connectionDistance = new double[70];
+	
+	public Node(SceneObject sceneObject, int id, int type){
+		
+		ID = id;
+		
+		TYPE = type;
+		
+		if (TYPE == BLOCKED) {
+			
+			blocked = true;
+			
+		}
+		
+		sco = sceneObject;
+		
+		sco.getElementForName("NODE").setVisible(false);
+		
+		for(int i = 0; i < scoe.length; i++){
+			
+			scoe[i] = sco.getElementForName("Connection" + i);
+			scoe[i].setVisible(false);
+			
+		}
+		
+		x = sco.getTranslation().x;
+		y = sco.getTranslation().z;
+		
+	}
+	
+	public String toString(){
+		
+		return "Node";
+		
+	}
+	
+	public void connectNode(Node n){
+		
+		//Check to see if it's already connected...
+		for(int i = 0; i < connections; i++){
+			
+			if(connection[i] == n || n.TYPE == PATH || TYPE == PATH){
+				
+				return;
+				
+			}
+			
+		}
+		
+		//Otherwise, add Node
+		connection[connections] = n;
+		connectionDistance[connections] = Triangulation.distance(this, n);
+		connections++;
+		
+		
+	}
+	
+	public Node[] getConnections() {
+		
+		return connection;
+		
+	}
+	
+	public int getConnectionCount() {
+		return connections;
+	}
+	
+	public void updateConnections() {
+		
+		if (!blocked) { 
+		
+			for(int i = 0; i < connections && i < 7; i++){
+			
+				scoe[i].setScale(new Vector3f(10.0f * (float)Triangulation.distance(this, connection[i]),1,1));
+				scoe[i].setRotation(new Vector3f(0,(float)Triangulation.angle(this, connection[i]) + (float)(Math.PI/2),0));
+			
+			}
+			
+		}
+		
+	}
+	
+}

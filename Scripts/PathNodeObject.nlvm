@@ -1,0 +1,94 @@
+import com.nolimitscoaster.*;
+
+public class PathNodeObject extends Script{
+	
+	private SceneObject sco;
+	SceneObject end;
+	private SceneObject[] path = new SceneObject[100];
+	private int pathSize = 0;
+	private String name;
+	
+	private static int id = 0;
+	private bool resorted = false;
+	Node node;
+	Node[] pathNodes = new Node[100];
+	Node endNode;
+	
+	public bool onInit(){
+		
+		sco = sim.getSceneObjectForEntityId(getParentEntityId());
+		
+		NodeNetwork.addNode(new Node(sco, NodeNetwork.nodeCount, Node.DEFAULT));
+		id++;
+		
+		name = sco.getName();
+		node = NodeNetwork.getNodeForID(NodeNetwork.nodeCount-1);
+	
+		//Find End Node
+		
+		end = sim.getSceneObject(name + "END");
+		NodeNetwork.addNode(new Node(end, NodeNetwork.nodeCount, Node.DEFAULT));
+		endNode = NodeNetwork.getNodeForID(NodeNetwork.nodeCount-1);
+		
+		//Find Middle Nodes
+		bool searching = true;
+		while (searching) {
+			
+			path[pathSize] = sim.getSceneObject(name + pathSize);
+			
+			if (path[pathSize] == null) {
+				searching = false;
+			}
+			else {
+				
+				NodeNetwork.addNode(new Node(path[pathSize], NodeNetwork.nodeCount, Node.PATH));
+				pathNodes[pathSize] = NodeNetwork.getNodeForID(NodeNetwork.nodeCount-1);
+				pathSize++;
+				
+			}
+			
+		}
+	
+		return true;
+		
+	}
+	
+	public void onNextFrame(float tick) {
+		
+		if (NodeNetwork.sorted && !resorted) {
+			
+			for (int i = 0; i < pathSize-1; i++) {
+
+				for(int c = 0; c < pathNodes[i].connections; c++) {
+					
+					pathNodes[i].connection[c] = pathNodes[i + 1];
+					
+				}
+				
+				pathNodes[i].updateConnections();
+				
+			}
+			
+			for(int c = 0; c < pathNodes[pathSize-1].connections; c++) {
+					
+				pathNodes[pathSize-1].connection[c] = endNode;
+				
+			}
+			
+			pathNodes[pathSize-1].updateConnections();
+			
+			for(int c = 0; c < node.connections; c++) {
+					
+				node.connection[c] = pathNodes[0];
+					
+			}
+			
+			node.updateConnections();
+			
+			resorted = true;
+			
+		}
+		
+	}
+	
+}

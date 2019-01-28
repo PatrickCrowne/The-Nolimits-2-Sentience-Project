@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <sceneobject>
+    <model path="Models/Node.dae"/>
+    <materialpath name="Connection">Materials/Connection.nl2mat</materialpath>
+    <materialpath name="Material">Materials/PathNode.nl2mat</materialpath>
+  </sceneobject>
+</root>

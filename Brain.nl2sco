@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <sceneobject>
+    <model path="Models/Node.dae"/>
+    <param basescalex="4"/>
+    <param basescaley="4"/>
+    <param basescalez="4"/>
+    <script>
+      <classpath>Scripts</classpath>
+      <class>NodeNetwork</class>
+      <sharedvm>true</sharedvm>
+    </script>
+  </sceneobject>
+</root>

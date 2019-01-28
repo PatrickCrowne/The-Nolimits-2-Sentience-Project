@@ -1,0 +1,342 @@
+<library_animations>
+    <animation id="action_container-LowerLeftArm" name="LowerLeftArm">
+      <animation id="LowerLeftArm_human_low-proxy741_002Action_transform" name="LowerLeftArm">
+        <source id="LowerLeftArm_human_low-proxy741_002Action_transform-input">
+          <float_array id="LowerLeftArm_human_low-proxy741_002Action_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#LowerLeftArm_human_low-proxy741_002Action_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="LowerLeftArm_human_low-proxy741_002Action_transform-output">
+          <float_array id="LowerLeftArm_human_low-proxy741_002Action_transform-output-array" count="320">0.9999999 1.0193e-8 -1.7973e-9 0.02420485 -2.00597e-8 0.9961947 0.08715567 0.005944721 -1.45863e-9 -0.0871557 0.9961947 -0.2654877 0 0 0 1 1 3.69834e-8 -4.91024e-9 0.02420488 -5.40931e-9 0.9955291 0.09445578 0.005944725 -1.19192e-9 -0.09445575 0.995529 -0.2654876 0 0 0 1 1 6.88981e-9 2.79865e-9 0.02420488 -2.10168e-8 0.9934529 0.1142435 0.005944762 -4.20037e-9 -0.1142435 0.9934528 -0.2654876 0 0 0 1 1 1.34339e-8 5.04973e-9 0.02420488 -2.21277e-8 0.9896764 0.1433198 0.005944783 -3.16669e-9 -0.1433198 0.9896764 -0.2654876 0 0 0 1 1 9.74762e-9 4.57319e-9 0.02420484 -1.24158e-8 0.9839475 0.1784587 0.005944706 -2.88936e-9 -0.1784587 0.9839474 -0.2654878 0 0 0 1 1 1.08811e-8 5.79078e-9 0.02420485 -1.18765e-8 0.9762961 0.2164396 0.005944727 -3.29843e-9 -0.2164396 0.9762961 -0.2654876 0 0 0 1 1 1.00086e-8 6.12733e-9 0.02420487 -1.23212e-8 0.9671792 0.2540956 0.005944688 -3.29959e-9 -0.2540956 0.9671792 -0.2654876 0 0 0 1 1 1.40682e-8 9.8319e-9 0.02420488 -1.4192e-8 0.9575211 0.2883633 0.005944706 -3.28527e-9 -0.2883634 0.9575211 -0.2654877 0 0 0 1 0.9999999 3.58168e-9 8.21601e-9 0.02420485 -3.0726e-8 0.9486553 0.3163113 0.005944721 -3.05989e-9 -0.3163113 0.9486554 -0.2654876 0 0 0 1 1 1.78043e-8 1.23793e-8 0.02420488 -1.69783e-8 0.9421746 0.3351228 0.005944714 -5.90096e-9 -0.3351227 0.9421746 -0.2654877 0 0 0 1 1 3.17703e-8 1.81314e-8 0.02420487 -4.41906e-8 0.9396927 0.3420201 0.005944729 -7.7251e-9 -0.3420201 0.9396927 -0.2654876 0 0 0 1 1 3.09271e-8 1.97942e-8 0.02420489 -4.42245e-8 0.9421746 0.3351227 0.005944677 -8.4482e-9 -0.3351227 0.9421745 -0.2654876 0 0 0 1 0.9999999 4.53503e-8 2.43303e-8 0.02420487 -5.93242e-8 0.9486553 0.3163114 0.005944692 -6.68079e-9 -0.3163113 0.9486554 -0.2654878 0 0 0 1 1 4.54398e-8 1.96565e-8 0.02420488 -4.49979e-8 0.9575211 0.2883633 0.005944706 -6.97087e-9 -0.2883634 0.9575211 -0.2654876 0 0 0 1 1 4.51483e-8 1.77308e-8 0.02420485 -5.35901e-8 0.9671792 0.2540955 0.005944688 -6.83533e-9 -0.2540956 0.9671792 -0.2654876 0 0 0 1 1 4.59558e-8 1.72017e-8 0.02420487 -4.85895e-8 0.9762959 0.2164395 0.005944725 -6.84734e-9 -0.2164395 0.9762959 -0.2654874 0 0 0 1 1 4.44332e-8 1.53766e-8 0.02420485 -5.0201e-8 0.9839475 0.1784587 0.005944694 -6.44843e-9 -0.1784587 0.9839474 -0.2654877 0 0 0 1 1 5.14893e-8 1.30983e-8 0.02420487 -5.27158e-8 0.9896765 0.1433198 0.005944727 -5.29216e-9 -0.1433198 0.9896764 -0.2654877 0 0 0 1 1 5.76361e-8 7.71534e-9 0.02420487 -5.50487e-8 0.9934528 0.1142435 0.005944671 -7.13399e-9 -0.1142435 0.9934527 -0.2654877 0 0 0 1 1 5.60141e-8 1.17683e-8 0.02420488 -5.675e-8 0.9955291 0.09445566 0.005944695 -1.19537e-8 -0.09445569 0.9955289 -0.2654877 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#LowerLeftArm_human_low-proxy741_002Action_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="LowerLeftArm_human_low-proxy741_002Action_transform-interpolation">
+          <Name_array id="LowerLeftArm_human_low-proxy741_002Action_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#LowerLeftArm_human_low-proxy741_002Action_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="LowerLeftArm_human_low-proxy741_002Action_transform-sampler">
+          <input semantic="INPUT" source="#LowerLeftArm_human_low-proxy741_002Action_transform-input"/>
+          <input semantic="OUTPUT" source="#LowerLeftArm_human_low-proxy741_002Action_transform-output"/>
+          <input semantic="INTERPOLATION" source="#LowerLeftArm_human_low-proxy741_002Action_transform-interpolation"/>
+        </sampler>
+        <channel source="#LowerLeftArm_human_low-proxy741_002Action_transform-sampler" target="LowerLeftArm/transform"/>
+      </animation>
+    </animation>
+    <animation id="action_container-LowerRightLeg" name="LowerRightLeg">
+      <animation id="LowerRightLeg_human_low-proxy741_011Action_001_transform" name="LowerRightLeg">
+        <source id="LowerRightLeg_human_low-proxy741_011Action_001_transform-input">
+          <float_array id="LowerRightLeg_human_low-proxy741_011Action_001_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#LowerRightLeg_human_low-proxy741_011Action_001_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="LowerRightLeg_human_low-proxy741_011Action_001_transform-output">
+          <float_array id="LowerRightLeg_human_low-proxy741_011Action_001_transform-output-array" count="320">1 -3.85312e-8 -1.61795e-8 -0.03802069 2.40308e-8 0.9063078 -0.4226182 0.009136736 3.24965e-8 0.4226182 0.9063078 -0.3018082 0 0 0 1 0.9999999 -6.86301e-8 -9.33809e-9 -0.03802069 5.19053e-8 0.8903718 -0.4552341 0.009136759 3.58754e-8 0.4552341 0.8903717 -0.3018082 0 0 0 1 1 -6.5652e-8 -7.0623e-9 -0.03802069 3.18992e-8 0.847678 -0.5305111 0.009136744 3.45328e-8 0.5305111 0.847678 -0.3018082 0 0 0 1 1 -6.42011e-8 1.56349e-9 -0.0380207 5.46383e-8 0.7884405 -0.6151112 0.009136748 3.1537e-8 0.6151112 0.7884404 -0.3018082 0 0 0 1 1 -6.16758e-8 1.26461e-8 -0.03802071 5.07861e-8 0.7323053 -0.6809766 0.009136749 3.08657e-8 0.6809766 0.7323052 -0.3018082 0 0 0 1 1 -5.92193e-8 1.52915e-8 -0.03802068 5.26871e-8 0.7071068 -0.7071068 0.009136755 3.10616e-8 0.7071068 0.7071068 -0.3018082 0 0 0 1 1 -6.2974e-8 1.38415e-8 -0.03802069 5.42947e-8 0.7565388 -0.6539489 0.009136721 3.08501e-8 0.6539489 0.7565387 -0.3018082 0 0 0 1 0.9999999 -6.17582e-8 -5.43658e-10 -0.03802069 4.06241e-8 0.8578855 -0.5138407 0.009136699 2.93844e-8 0.5138407 0.8578856 -0.3018082 0 0 0 1 1 -4.65599e-8 -1.49939e-8 -0.0380207 5.48281e-8 0.9450632 -0.326888 0.009136736 3.01873e-8 0.326888 0.9450632 -0.3018082 0 0 0 1 1 -6.70437e-8 -2.3626e-8 -0.03802071 6.24889e-8 0.9872476 -0.1591919 0.009136796 2.20406e-8 0.1591919 0.9872477 -0.3018082 0 0 0 1 1 -1.49012e-8 0 -0.03802069 3.27448e-8 0.9961947 -0.0871557 0.009136721 2.35412e-9 0.08715573 0.9961947 -0.3018082 0 0 0 1 1 0 3.72529e-9 -0.03802072 3.24769e-8 0.9849767 -0.1726877 0.009136736 2.54508e-9 0.1726877 0.9849766 -0.3018081 0 0 0 1 0.9999999 -1.45364e-8 -2.77607e-9 -0.03802068 1.69039e-8 0.9444819 -0.3285632 0.009136766 -6.09021e-10 0.3285632 0.944482 -0.3018082 0 0 0 1 1 -3.70867e-8 4.64918e-9 -0.0380207 4.57793e-8 0.9112597 -0.4118325 0.009136721 1.92624e-8 0.4118325 0.9112596 -0.3018082 0 0 0 1 1 -4.52926e-8 2.85678e-9 -0.03802069 4.78964e-8 0.9094411 -0.4158329 0.009136721 1.63912e-8 0.4158329 0.9094411 -0.3018082 0 0 0 1 1 -4.84293e-8 4.12122e-9 -0.03802069 4.57055e-8 0.9081272 -0.4186943 0.009136748 1.65345e-8 0.4186943 0.9081272 -0.3018083 0 0 0 1 1 -4.24719e-8 2.69067e-9 -0.03802072 4.15887e-8 0.9072415 -0.4206102 0.009136755 1.64287e-8 0.4206102 0.9072415 -0.3018082 0 0 0 1 1 -4.62718e-8 1.41299e-9 -0.03802072 4.7865e-8 0.9067023 -0.4217713 0.009136755 1.76572e-8 0.4217713 0.9067022 -0.3018082 0 0 0 1 1 -4.20205e-8 1.7251e-9 -0.03802069 5.07847e-8 0.9064248 -0.4223673 0.009136759 1.18405e-8 0.4223674 0.9064248 -0.3018082 0 0 0 1 0.9999999 -3.98218e-8 4.75274e-9 -0.03802069 5.31221e-8 0.9063224 -0.4225869 0.009136707 1.01143e-8 0.4225868 0.9063224 -0.3018082 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#LowerRightLeg_human_low-proxy741_011Action_001_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="LowerRightLeg_human_low-proxy741_011Action_001_transform-interpolation">
+          <Name_array id="LowerRightLeg_human_low-proxy741_011Action_001_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#LowerRightLeg_human_low-proxy741_011Action_001_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="LowerRightLeg_human_low-proxy741_011Action_001_transform-sampler">
+          <input semantic="INPUT" source="#LowerRightLeg_human_low-proxy741_011Action_001_transform-input"/>
+          <input semantic="OUTPUT" source="#LowerRightLeg_human_low-proxy741_011Action_001_transform-output"/>
+          <input semantic="INTERPOLATION" source="#LowerRightLeg_human_low-proxy741_011Action_001_transform-interpolation"/>
+        </sampler>
+        <channel source="#LowerRightLeg_human_low-proxy741_011Action_001_transform-sampler" target="LowerRightLeg/transform"/>
+      </animation>
+    </animation>
+    <animation id="action_container-Chest" name="Chest">
+      <animation id="Chest_human_low-proxy741Action_transform" name="Chest">
+        <source id="Chest_human_low-proxy741Action_transform-input">
+          <float_array id="Chest_human_low-proxy741Action_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#Chest_human_low-proxy741Action_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Chest_human_low-proxy741Action_transform-output">
+          <float_array id="Chest_human_low-proxy741Action_transform-output-array" count="320">0.9848077 0.1729874 -0.01513443 0 -0.1736482 0.9810603 -0.08583163 0 4.32097e-9 0.08715571 0.9961947 -0.054855 0 0 0 1 0.9864579 0.1633905 -0.01429482 0 -0.1640147 0.9827041 -0.08597545 0 4.32097e-9 0.08715571 0.9961947 -0.04790988 0 0 0 1 0.9904614 0.137266 -0.01200922 0 -0.1377903 0.9866924 -0.08632438 0 4.32097e-9 0.08715571 0.9961947 -0.03134844 0 0 0 1 0.9950902 0.09859577 -0.008626014 0 -0.09897239 0.9913036 -0.0867278 0 4.32097e-9 0.08715571 0.9961947 -0.01158156 0 0 0 1 0.9986658 0.05144226 -0.004500617 0 -0.05163876 0.9948656 -0.08703943 0 4.32097e-9 0.08715571 0.9961947 0.004979879 0 0 0 1 1 -7.79883e-9 -3.65517e-9 0 7.45058e-9 0.9961947 -0.08715571 0 4.32097e-9 0.08715571 0.9961947 0.01192501 0 0 0 1 0.9986658 -0.05144228 0.004500611 0 0.05163878 0.9948656 -0.08703944 0 4.32097e-9 0.08715571 0.9961947 0.004979886 0 0 0 1 0.9950902 -0.0985958 0.008626007 0 0.09897242 0.9913036 -0.0867278 0 4.32097e-9 0.08715571 0.9961947 -0.01158156 0 0 0 1 0.9904614 -0.137266 0.01200921 0 0.1377903 0.9866924 -0.08632438 0 4.32097e-9 0.08715571 0.9961947 -0.03134844 0 0 0 1 0.9864579 -0.1633906 0.01429482 0 0.1640148 0.9827041 -0.08597545 0 4.32097e-9 0.08715571 0.9961947 -0.04790987 0 0 0 1 0.9848077 -0.1729874 0.01513443 0 0.1736482 0.9810603 -0.08583162 0 4.32097e-9 0.08715571 0.9961947 -0.054855 0 0 0 1 0.9864579 -0.1633906 0.01429481 0 0.1640147 0.9827041 -0.08597544 0 4.32097e-9 0.08715571 0.9961947 -0.04666968 0 0 0 1 0.9904614 -0.137266 0.01200921 0 0.1377903 0.9866924 -0.08632437 0 4.32097e-9 0.08715571 0.9961947 -0.02715084 0 0 0 1 0.9950902 -0.09859578 0.008626005 0 0.0989724 0.9913036 -0.08672779 0 4.32097e-9 0.08715571 0.9961947 -0.003854152 0 0 0 1 0.9986658 -0.05144225 0.004500607 0 0.05163875 0.9948656 -0.08703943 0 4.32097e-9 0.08715571 0.9961947 0.01566469 0 0 0 1 1 3.67345e-8 -7.55133e-9 0 -3.72529e-8 0.9961947 -0.08715571 0 4.32097e-9 0.08715571 0.9961947 0.02385001 0 0 0 1 0.9986658 0.05144228 -0.004500619 0 -0.05163878 0.9948656 -0.08703943 0 4.32097e-9 0.08715571 0.9961947 0.01566468 0 0 0 1 0.9950902 0.09859583 -0.008626018 0 -0.09897245 0.9913036 -0.08672779 0 4.32097e-9 0.08715571 0.9961947 -0.003854158 0 0 0 1 0.9904614 0.137266 -0.01200922 0 -0.1377903 0.9866924 -0.08632437 0 4.32097e-9 0.08715571 0.9961947 -0.02715084 0 0 0 1 0.9864579 0.1633906 -0.01429483 0 -0.1640148 0.9827041 -0.08597544 0 4.32097e-9 0.08715571 0.9961947 -0.04666967 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Chest_human_low-proxy741Action_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Chest_human_low-proxy741Action_transform-interpolation">
+          <Name_array id="Chest_human_low-proxy741Action_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#Chest_human_low-proxy741Action_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Chest_human_low-proxy741Action_transform-sampler">
+          <input semantic="INPUT" source="#Chest_human_low-proxy741Action_transform-input"/>
+          <input semantic="OUTPUT" source="#Chest_human_low-proxy741Action_transform-output"/>
+          <input semantic="INTERPOLATION" source="#Chest_human_low-proxy741Action_transform-interpolation"/>
+        </sampler>
+        <channel source="#Chest_human_low-proxy741Action_transform-sampler" target="Chest/transform"/>
+      </animation>
+    </animation>
+    <animation id="action_container-Head" name="Head">
+      <animation id="Head_human_low-proxy741_005Action_transform" name="Head">
+        <source id="Head_human_low-proxy741_005Action_transform-input">
+          <float_array id="Head_human_low-proxy741_005Action_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#Head_human_low-proxy741_005Action_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Head_human_low-proxy741_005Action_transform-output">
+          <float_array id="Head_human_low-proxy741_005Action_transform-output-array" count="320">0.9848078 -0.1736482 -1.7636e-9 -5.14184e-10 0.1729874 0.9810604 0.08715572 0.07969557 -0.01513443 -0.08583164 0.9961947 1.493171 0 0 0 1 0.9864577 -0.1640153 1.56629e-5 -8.97703e-10 0.1633919 0.9827165 0.08701361 0.07969556 -0.01428696 -0.08583269 0.9962071 1.493171 0 0 0 1 0.9904612 -0.1377922 4.50329e-5 8.75844e-10 0.1372699 0.9867348 0.08666819 0.07969557 -0.01198664 -0.0858353 0.9962373 1.493171 0 0 0 1 0.9950899 -0.09897496 5.87485e-5 4.44022e-10 0.09860092 0.9913808 0.08626767 0.07969558 -0.00859658 -0.0858383 0.9962719 1.49317 0 0 0 1 0.9986658 -0.05164056 4.12686e-5 -4.90216e-10 0.05144589 0.9949696 0.08595742 0.07969557 -0.00447995 -0.0858406 0.9962988 1.49317 0 0 0 1 1 -3.73952e-8 4.9754e-11 1.33227e-15 3.72529e-8 0.9963089 0.08584147 0.07969557 -3.25963e-9 -0.08584147 0.9963089 1.49317 0 0 0 1 0.9986658 0.05164049 -4.12644e-5 4.39288e-10 -0.05144582 0.9949697 0.08595742 0.07969556 0.00447994 -0.0858406 0.9962988 1.49317 0 0 0 1 0.9950899 0.09897485 -5.87486e-5 -4.873e-10 -0.09860082 0.9913808 0.08626767 0.07969558 0.008596572 -0.0858383 0.996272 1.493171 0 0 0 1 0.9904612 0.1377922 -4.5031e-5 2.72937e-12 -0.1372698 0.9867349 0.08666819 0.07969557 0.01198663 -0.0858353 0.9962373 1.493171 0 0 0 1 0.9864578 0.1640153 -1.56555e-5 1.3808e-9 -0.1633919 0.9827166 0.08701362 0.07969557 0.01428695 -0.0858327 0.9962072 1.493171 0 0 0 1 0.9848077 0.1736481 5.40983e-9 1.29025e-9 -0.1729874 0.9810603 0.08715572 0.07969557 0.01513443 -0.08583164 0.9961947 1.49317 0 0 0 1 0.9864577 0.1640153 -1.56603e-5 -5.90559e-11 -0.1633919 0.9827165 0.08701362 0.07969555 0.01428696 -0.08583271 0.9962072 1.493171 0 0 0 1 0.9904612 0.1377922 -4.50299e-5 -9.36785e-10 -0.1372698 0.9867349 0.0866682 0.07969555 0.01198663 -0.08583531 0.9962373 1.493171 0 0 0 1 0.9950899 0.09897491 -5.87462e-5 -9.56996e-10 -0.09860087 0.9913808 0.08626768 0.07969558 0.008596575 -0.0858383 0.996272 1.493171 0 0 0 1 0.9986658 0.05164051 -4.12664e-5 2.071e-10 -0.05144583 0.9949696 0.08595742 0.07969556 0.004479943 -0.08584061 0.9962988 1.49317 0 0 0 1 1 -3.75151e-8 1.44158e-9 4.44089e-16 3.72529e-8 0.9963089 0.08584148 0.07969556 -4.65661e-9 -0.08584148 0.9963089 1.493171 0 0 0 1 0.9986658 -0.05164053 4.12692e-5 -2.58562e-10 0.05144586 0.9949696 0.08595742 0.07969557 -0.004479949 -0.08584061 0.9962988 1.49317 0 0 0 1 0.9950899 -0.09897497 5.87453e-5 2.299e-9 0.09860093 0.9913808 0.08626768 0.07969557 -0.008596578 -0.0858383 0.9962719 1.49317 0 0 0 1 0.9904612 -0.1377923 4.503e-5 2.29237e-9 0.1372699 0.9867348 0.0866682 0.07969555 -0.01198664 -0.08583531 0.9962373 1.493171 0 0 0 1 0.9864577 -0.1640154 1.56559e-5 4.36133e-10 0.163392 0.9827165 0.08701362 0.07969555 -0.01428696 -0.08583271 0.9962072 1.493171 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Head_human_low-proxy741_005Action_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Head_human_low-proxy741_005Action_transform-interpolation">
+          <Name_array id="Head_human_low-proxy741_005Action_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#Head_human_low-proxy741_005Action_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Head_human_low-proxy741_005Action_transform-sampler">
+          <input semantic="INPUT" source="#Head_human_low-proxy741_005Action_transform-input"/>
+          <input semantic="OUTPUT" source="#Head_human_low-proxy741_005Action_transform-output"/>
+          <input semantic="INTERPOLATION" source="#Head_human_low-proxy741_005Action_transform-interpolation"/>
+        </sampler>
+        <channel source="#Head_human_low-proxy741_005Action_transform-sampler" target="Head/transform"/>
+      </animation>
+    </animation>
+    <animation id="action_container-LowerLeftLeg" name="LowerLeftLeg">
+      <animation id="LowerLeftLeg_human_low-proxy741_004Action_transform" name="LowerLeftLeg">
+        <source id="LowerLeftLeg_human_low-proxy741_004Action_transform-input">
+          <float_array id="LowerLeftLeg_human_low-proxy741_004Action_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#LowerLeftLeg_human_low-proxy741_004Action_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="LowerLeftLeg_human_low-proxy741_004Action_transform-output">
+          <float_array id="LowerLeftLeg_human_low-proxy741_004Action_transform-output-array" count="320">1 -1.17524e-8 -6.75252e-9 0.03802069 1.78436e-8 0.9961947 -0.08715564 0.009136736 2.35413e-9 0.08715564 0.9961948 -0.3018082 0 0 0 1 1 -1.73786e-8 3.30133e-9 0.03802069 1.75757e-8 0.9871965 -0.1595092 0.009136721 2.54509e-9 0.1595092 0.9871964 -0.3018082 0 0 0 1 1 -1.34173e-8 -1.7637e-9 0.03802068 2.43545e-8 0.9554324 -0.2952105 0.009136736 6.84157e-9 0.2952105 0.9554324 -0.3018082 0 0 0 1 0.9999999 -3.75415e-8 4.73118e-10 0.0380207 5.32299e-8 0.9261341 -0.3771942 0.009136721 1.55371e-8 0.3771943 0.9261341 -0.3018083 0 0 0 1 1 -5.28433e-8 2.85829e-9 0.03802069 4.78964e-8 0.9200781 -0.391735 0.009136774 1.63912e-8 0.391735 0.920078 -0.3018082 0 0 0 1 1 -4.85095e-8 3.03499e-9 0.03802069 4.57055e-8 0.9172812 -0.3982403 0.009136736 1.65345e-8 0.3982403 0.9172812 -0.3018082 0 0 0 1 1 -5.00604e-8 4.10162e-9 0.0380207 4.90393e-8 0.9165314 -0.3999629 0.009136753 1.66616e-8 0.3999628 0.9165314 -0.3018082 0 0 0 1 1 -3.97743e-8 7.26098e-9 0.03802072 4.7865e-8 0.9164736 -0.4000953 0.00913674 1.57946e-8 0.4000952 0.9164736 -0.3018082 0 0 0 1 1 -4.93407e-8 1.61903e-9 0.0380207 5.07847e-8 0.9157203 -0.4018163 0.009136751 1.18405e-8 0.4018163 0.9157203 -0.3018081 0 0 0 1 0.9999999 -4.21773e-8 -4.7127e-9 0.0380207 3.82209e-8 0.912852 -0.4082904 0.009136744 1.75648e-8 0.4082904 0.9128521 -0.3018082 0 0 0 1 1 -7.62361e-8 -1.73027e-9 0.03802069 3.8932e-8 0.9063079 -0.4226182 0.009136751 3.62218e-8 0.4226182 0.9063079 -0.3018082 0 0 0 1 1 -4.81525e-8 -4.38795e-9 0.03802071 5.19053e-8 0.8841007 -0.4672967 0.009136714 3.21501e-8 0.4672967 0.8841006 -0.3018082 0 0 0 1 1 -6.07255e-8 5.08133e-9 0.03802069 6.17016e-8 0.8394651 -0.5434139 0.009136755 3.45328e-8 0.5434138 0.8394651 -0.3018082 0 0 0 1 1 -4.98223e-8 7.55337e-10 0.03802071 5.46383e-8 0.7821276 -0.6231184 0.009136751 3.15371e-8 0.6231185 0.7821276 -0.3018082 0 0 0 1 1 -6.16202e-8 1.6315e-8 0.03802073 5.82367e-8 0.7299866 -0.6834615 0.009136751 3.13314e-8 0.6834615 0.7299865 -0.3018082 0 0 0 1 1 -1.30188e-7 -3.28458e-8 0.03802071 6.88312e-8 0.7071069 -0.7071066 0.00913674 1.15282e-7 0.7071066 0.7071069 -0.3018083 0 0 0 1 1 -1.26747e-7 -4.47194e-8 0.03802069 6.71782e-8 0.7565389 -0.6539487 0.009136721 1.16183e-7 0.6539488 0.7565387 -0.3018082 0 0 0 1 1 -1.13534e-7 -6.57751e-8 0.0380207 6.83675e-8 0.8578857 -0.5138407 0.009136759 1.14383e-7 0.5138406 0.8578857 -0.3018082 0 0 0 1 0.9999999 -1.06536e-7 -8.48616e-8 0.03802067 7.03033e-8 0.9450631 -0.326888 0.009136781 1.12069e-7 0.3268879 0.9450631 -0.3018082 0 0 0 1 0.9999999 -9.43664e-8 -1.05158e-7 0.0380207 6.05941e-8 0.9872476 -0.1591919 0.009136781 1.0998e-7 0.1591919 0.9872476 -0.3018082 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#LowerLeftLeg_human_low-proxy741_004Action_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="LowerLeftLeg_human_low-proxy741_004Action_transform-interpolation">
+          <Name_array id="LowerLeftLeg_human_low-proxy741_004Action_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#LowerLeftLeg_human_low-proxy741_004Action_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="LowerLeftLeg_human_low-proxy741_004Action_transform-sampler">
+          <input semantic="INPUT" source="#LowerLeftLeg_human_low-proxy741_004Action_transform-input"/>
+          <input semantic="OUTPUT" source="#LowerLeftLeg_human_low-proxy741_004Action_transform-output"/>
+          <input semantic="INTERPOLATION" source="#LowerLeftLeg_human_low-proxy741_004Action_transform-interpolation"/>
+        </sampler>
+        <channel source="#LowerLeftLeg_human_low-proxy741_004Action_transform-sampler" target="LowerLeftLeg/transform"/>
+      </animation>
+    </animation>
+    <animation id="action_container-LowerRightArm" name="LowerRightArm">
+      <animation id="LowerRightArm_human_low-proxy741_009Action_transform" name="LowerRightArm">
+        <source id="LowerRightArm_human_low-proxy741_009Action_transform-input">
+          <float_array id="LowerRightArm_human_low-proxy741_009Action_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#LowerRightArm_human_low-proxy741_009Action_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="LowerRightArm_human_low-proxy741_009Action_transform-output">
+          <float_array id="LowerRightArm_human_low-proxy741_009Action_transform-output-array" count="320">1 4.54907e-8 2.06636e-8 -0.02420487 -4.41906e-8 0.9396927 0.3420202 0.005944714 -6.79379e-9 -0.3420202 0.9396927 -0.2654876 0 0 0 1 1 5.99796e-8 2.14992e-8 -0.02420488 -4.42245e-8 0.9421746 0.3351228 0.005944706 -5.65424e-9 -0.3351228 0.9421745 -0.2654878 0 0 0 1 1 4.58354e-8 1.9295e-8 -0.02420487 -4.44231e-8 0.9486554 0.3163114 0.005944729 -6.6808e-9 -0.3163114 0.9486554 -0.2654876 0 0 0 1 0.9999999 5.2829e-8 1.98811e-8 -0.02420487 -4.49979e-8 0.9575209 0.2883634 0.005944699 -6.97088e-9 -0.2883634 0.957521 -0.2654877 0 0 0 1 1 4.88736e-8 1.86621e-8 -0.02420485 -4.61395e-8 0.9671791 0.2540956 0.005944688 -6.83534e-9 -0.2540956 0.9671792 -0.2654876 0 0 0 1 1 4.59557e-8 1.72017e-8 -0.02420485 -4.85896e-8 0.9762961 0.2164396 0.005944734 -6.84735e-9 -0.2164396 0.9762961 -0.2654876 0 0 0 1 1 5.18838e-8 1.6308e-8 -0.02420485 -5.0201e-8 0.9839475 0.1784588 0.005944709 -6.44843e-9 -0.1784588 0.9839474 -0.2654878 0 0 0 1 1 4.43711e-8 1.12058e-8 -0.02420485 -4.52652e-8 0.9896766 0.1433199 0.005944732 -5.29217e-9 -0.1433199 0.9896765 -0.2654877 0 0 0 1 1 5.66519e-8 1.1573e-8 -0.02420487 -5.50487e-8 0.9934529 0.1142436 0.005944734 -3.40871e-9 -0.1142437 0.9934528 -0.2654877 0 0 0 1 0.9999999 3.09992e-8 1.09784e-8 -0.02420491 -5.675e-8 0.9955289 0.09445578 0.005944673 -4.50312e-9 -0.09445575 0.9955289 -0.2654876 0 0 0 1 0.9999999 3.99953e-8 5.65328e-9 -0.02420485 -2.00597e-8 0.9961948 0.0871557 0.005944692 -8.90919e-9 -0.08715579 0.9961947 -0.2654876 0 0 0 1 1 1.07716e-8 5.67316e-9 -0.02420485 -5.40931e-9 0.9955292 0.09445584 0.005944703 -1.19191e-9 -0.09445581 0.9955292 -0.2654876 0 0 0 1 1 2.27752e-8 2.66627e-9 -0.02420488 -2.10168e-8 0.9934529 0.1142436 0.005944708 3.25023e-9 -0.1142437 0.9934528 -0.2654876 0 0 0 1 1 2.8335e-8 1.32444e-9 -0.02420487 -1.46771e-8 0.9896766 0.1433199 0.005944731 5.58622e-10 -0.1433199 0.9896765 -0.2654877 0 0 0 1 1 1.70631e-8 6.67357e-9 -0.02420487 -1.24158e-8 0.9839475 0.1784588 0.005944682 -2.88934e-9 -0.1784588 0.9839474 -0.2654877 0 0 0 1 1 1.0881e-8 5.79077e-9 -0.02420488 -1.18765e-8 0.9762961 0.2164397 0.005944714 -3.29841e-9 -0.2164397 0.9762961 -0.2654875 0 0 0 1 1 1.35856e-8 6.11546e-9 -0.02420487 -8.59593e-9 0.9671792 0.2540956 0.00594471 -2.83391e-9 -0.2540956 0.9671792 -0.2654876 0 0 0 1 0.9999999 6.67901e-9 9.60729e-9 -0.02420487 -1.4192e-8 0.9575209 0.2883634 0.005944706 -3.51808e-9 -0.2883634 0.957521 -0.2654876 0 0 0 1 1 1.94531e-8 1.87063e-9 -0.02420487 -1.58248e-8 0.9486554 0.3163114 0.005944706 -3.05987e-9 -0.3163114 0.9486554 -0.2654876 0 0 0 1 1 1.85542e-8 1.81249e-8 -0.02420488 -1.69783e-8 0.9421746 0.3351228 0.005944699 -4.03829e-9 -0.3351228 0.9421746 -0.2654876 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#LowerRightArm_human_low-proxy741_009Action_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="LowerRightArm_human_low-proxy741_009Action_transform-interpolation">
+          <Name_array id="LowerRightArm_human_low-proxy741_009Action_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#LowerRightArm_human_low-proxy741_009Action_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="LowerRightArm_human_low-proxy741_009Action_transform-sampler">
+          <input semantic="INPUT" source="#LowerRightArm_human_low-proxy741_009Action_transform-input"/>
+          <input semantic="OUTPUT" source="#LowerRightArm_human_low-proxy741_009Action_transform-output"/>
+          <input semantic="INTERPOLATION" source="#LowerRightArm_human_low-proxy741_009Action_transform-interpolation"/>
+        </sampler>
+        <channel source="#LowerRightArm_human_low-proxy741_009Action_transform-sampler" target="LowerRightArm/transform"/>
+      </animation>
+    </animation>
+    <animation id="action_container-UpperRightLeg" name="UpperRightLeg">
+      <animation id="UpperRightLeg_human_low-proxy741_010Action_001_transform" name="UpperRightLeg">
+        <source id="UpperRightLeg_human_low-proxy741_010Action_001_transform-input">
+          <float_array id="UpperRightLeg_human_low-proxy741_010Action_001_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#UpperRightLeg_human_low-proxy741_010Action_001_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="UpperRightLeg_human_low-proxy741_010Action_001_transform-output">
+          <float_array id="UpperRightLeg_human_low-proxy741_010Action_001_transform-output-array" count="320">1 -4.31108e-8 -1.05254e-8 -0.09224475 1.69104e-8 0.9659259 -0.2588191 -0.08576236 1.55147e-8 0.2588191 0.9659258 -0.2323347 0 0 0 1 0.9999999 -1.37129e-8 -7.64516e-9 -0.09224473 1.69104e-8 0.971961 -0.2351421 -0.08576235 1.55147e-8 0.2351421 0.971961 -0.2323347 0 0 0 1 1 -4.3514e-8 -1.0399e-8 -0.09224474 3.18115e-8 0.9854079 -0.1702095 -0.08576236 1.55147e-8 0.1702095 0.9854079 -0.2323346 0 0 0 1 1 -5.14096e-8 -1.03044e-8 -0.09224473 3.18115e-8 0.9973145 -0.07323823 -0.08576235 1.55147e-8 0.07323824 0.9973144 -0.2323346 0 0 0 1 1 -3.33326e-8 -1.74664e-8 -0.09224473 3.18115e-8 0.9989706 0.04536295 -0.08576234 1.59803e-8 -0.04536296 0.9989706 -0.2323346 0 0 0 1 1 -3.002e-8 -2.143e-8 -0.09224473 3.32852e-8 0.9848078 0.1736481 -0.08576235 1.58915e-8 -0.1736481 0.9848078 -0.2323346 0 0 0 1 1 -2.7077e-8 -2.4323e-8 -0.09224473 3.55368e-8 0.9542404 0.2990407 -0.08576236 1.55147e-8 -0.2990407 0.9542403 -0.2323346 0 0 0 1 1 -1.64326e-8 -2.913e-8 -0.09224473 3.18115e-8 0.9121202 0.409923 -0.08576235 1.6446e-8 -0.409923 0.9121202 -0.2323347 0 0 0 1 1 -1.68544e-8 -2.55752e-8 -0.09224474 1.69104e-8 0.8677654 0.496974 -0.08576237 1.6446e-8 -0.496974 0.8677654 -0.2323346 0 0 0 1 1 -3.20314e-8 -3.31645e-8 -0.09224474 3.18115e-8 0.8329212 0.5533917 -0.08576235 1.6446e-8 -0.5533917 0.8329212 -0.2323347 0 0 0 1 1 8.70787e-8 5.61868e-8 -0.09224474 -8.9743e-8 0.8191521 0.5735764 -0.08576237 -1.04641e-9 -0.5735764 0.8191521 -0.2323346 0 0 0 1 1 7.18309e-8 4.2159e-8 -0.09224474 -7.48418e-8 0.8329213 0.5533915 -0.08576236 8.16236e-10 -0.5533915 0.8329213 -0.2323346 0 0 0 1 1 8.03938e-8 4.43599e-8 -0.09224474 -8.9743e-8 0.8677655 0.4969739 -0.08576237 -1.04641e-9 -0.4969739 0.8677655 -0.2323346 0 0 0 1 1 8.0425e-8 3.04746e-8 -0.09224472 -8.22924e-8 0.9121202 0.409923 -0.08576235 -1.04641e-9 -0.409923 0.9121202 -0.2323347 0 0 0 1 1 8.46817e-8 2.59684e-8 -0.09224474 -8.22924e-8 0.9542404 0.2990407 -0.08576235 -5.80747e-10 -0.2990407 0.9542403 -0.2323346 0 0 0 1 1 8.3545e-8 1.55165e-8 -0.09224473 -8.49702e-8 0.9848078 0.173648 -0.08576236 -7.73323e-10 -0.173648 0.9848078 -0.2323347 0 0 0 1 1 8.58767e-8 4.4197e-9 -0.09224473 -8.60177e-8 0.9989706 0.04536293 -0.08576234 -5.80747e-10 -0.04536294 0.9989706 -0.2323346 0 0 0 1 1 6.77997e-8 -2.85387e-9 -0.09224474 -8.22924e-8 0.9973145 -0.07323824 -0.08576234 -1.04641e-9 0.07323824 0.9973144 -0.2323346 0 0 0 1 1 9.05965e-8 -1.0399e-8 -0.09224474 -8.9743e-8 0.9854079 -0.1702096 -0.08576236 -1.04641e-9 0.1702096 0.9854079 -0.2323346 0 0 0 1 1 7.5397e-8 -2.3429e-8 -0.09224474 -8.9743e-8 0.971961 -0.2351422 -0.08576234 -1.04641e-9 0.2351422 0.971961 -0.2323346 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#UpperRightLeg_human_low-proxy741_010Action_001_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="UpperRightLeg_human_low-proxy741_010Action_001_transform-interpolation">
+          <Name_array id="UpperRightLeg_human_low-proxy741_010Action_001_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#UpperRightLeg_human_low-proxy741_010Action_001_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="UpperRightLeg_human_low-proxy741_010Action_001_transform-sampler">
+          <input semantic="INPUT" source="#UpperRightLeg_human_low-proxy741_010Action_001_transform-input"/>
+          <input semantic="OUTPUT" source="#UpperRightLeg_human_low-proxy741_010Action_001_transform-output"/>
+          <input semantic="INTERPOLATION" source="#UpperRightLeg_human_low-proxy741_010Action_001_transform-interpolation"/>
+        </sampler>
+        <channel source="#UpperRightLeg_human_low-proxy741_010Action_001_transform-sampler" target="UpperRightLeg/transform"/>
+      </animation>
+    </animation>
+    <animation id="action_container-UpperLeftArm" name="UpperLeftArm">
+      <animation id="UpperLeftArm_human_low-proxy741_001Action_transform" name="UpperLeftArm">
+        <source id="UpperLeftArm_human_low-proxy741_001Action_transform-input">
+          <float_array id="UpperLeftArm_human_low-proxy741_001Action_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#UpperLeftArm_human_low-proxy741_001Action_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="UpperLeftArm_human_low-proxy741_001Action_transform-output">
+          <float_array id="UpperLeftArm_human_low-proxy741_001Action_transform-output-array" count="320">1 -2.78344e-8 -1.81314e-8 0.1805467 3.25095e-8 0.9396927 -0.3420202 0.04603667 2.25615e-8 0.3420202 0.9396926 1.393106 0 0 0 1 0.9999999 -2.82776e-8 -4.0516e-9 0.1805467 3.25095e-8 0.9446056 -0.3282073 0.04603668 2.16302e-8 0.3282073 0.9446056 1.393106 0 0 0 1 1 -4.29681e-8 -1.058e-8 0.1805467 4.74107e-8 0.956915 -0.2903682 0.04603668 2.25615e-8 0.2903682 0.9569151 1.393106 0 0 0 1 1 -5.0675e-8 -1.4211e-8 0.1805467 4.74107e-8 0.9722884 -0.2337848 0.04603669 2.16302e-8 0.2337848 0.9722883 1.393106 0 0 0 1 1 -4.35423e-8 -1.69109e-8 0.1805467 3.99601e-8 0.9864579 -0.1640147 0.04603669 2.34928e-8 0.1640147 0.9864579 1.393106 0 0 0 1 1 -4.51617e-8 -1.91899e-8 0.1805467 4.33173e-8 0.9961948 -0.08715577 0.04603669 2.3053e-8 0.08715577 0.9961948 1.393106 0 0 0 1 1 -4.79776e-8 -2.1908e-8 0.1805467 4.36854e-8 0.9999523 -0.009773731 0.04603668 2.30272e-8 0.009773739 0.9999523 1.393106 0 0 0 1 1 -3.71326e-8 -2.56129e-8 0.1805467 4.74107e-8 0.9981135 0.06139694 0.04603669 2.25615e-8 -0.06139696 0.9981134 1.393106 0 0 0 1 1 -2.99551e-8 -2.93392e-8 0.1805467 3.25095e-8 0.9927993 0.1197903 0.04603668 2.25615e-8 -0.1197903 0.9927993 1.393106 0 0 0 1 1 -5.99424e-8 -2.98146e-8 0.1805467 4.74107e-8 0.9872477 0.159192 0.04603668 2.34928e-8 -0.1591919 0.9872476 1.393106 0 0 0 1 1 -4.05851e-10 9.29551e-9 0.1805467 -3.00898e-8 0.9848077 0.1736482 0.04603668 -6.07984e-9 -0.1736482 0.9848077 1.393106 0 0 0 1 1 1.44958e-8 1.02298e-8 0.1805467 -3.00898e-8 0.9872476 0.159192 0.04603669 -4.21719e-9 -0.159192 0.9872476 1.393106 0 0 0 1 1 4.45813e-8 6.51725e-9 0.1805467 -3.00898e-8 0.9927993 0.1197903 0.04603668 -5.14852e-9 -0.1197903 0.9927993 1.393106 0 0 0 1 1 2.2472e-8 6.75054e-9 0.1805467 -2.26392e-8 0.9981135 0.06139694 0.04603669 -6.07984e-9 -0.06139694 0.9981134 1.393106 0 0 0 1 1 1.90776e-8 5.56603e-9 0.1805467 -1.89139e-8 0.9999523 -0.009773709 0.04603668 -5.61418e-9 0.009773716 0.9999523 1.393106 0 0 0 1 1 2.43876e-8 3.43675e-9 0.1805467 -2.39952e-8 0.9961948 -0.0871558 0.04603668 -5.54919e-9 0.0871558 0.9961948 1.393106 0 0 0 1 1 2.72382e-8 1.71554e-9 0.1805467 -2.63645e-8 0.9864579 -0.1640147 0.0460367 -5.61418e-9 0.1640147 0.9864579 1.393106 0 0 0 1 1 1.63803e-8 6.9017e-10 0.1805467 -2.26392e-8 0.9722883 -0.2337848 0.0460367 -6.07984e-9 0.2337848 0.9722883 1.393106 0 0 0 1 1 1.66365e-8 5.9589e-10 0.1805467 -3.00898e-8 0.956915 -0.2903682 0.04603668 -5.14852e-9 0.2903683 0.956915 1.393106 0 0 0 1 1 4.5847e-8 -4.90135e-9 0.1805467 -3.00898e-8 0.9446057 -0.3282074 0.04603668 -6.07984e-9 0.3282074 0.9446057 1.393106 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#UpperLeftArm_human_low-proxy741_001Action_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="UpperLeftArm_human_low-proxy741_001Action_transform-interpolation">
+          <Name_array id="UpperLeftArm_human_low-proxy741_001Action_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#UpperLeftArm_human_low-proxy741_001Action_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="UpperLeftArm_human_low-proxy741_001Action_transform-sampler">
+          <input semantic="INPUT" source="#UpperLeftArm_human_low-proxy741_001Action_transform-input"/>
+          <input semantic="OUTPUT" source="#UpperLeftArm_human_low-proxy741_001Action_transform-output"/>
+          <input semantic="INTERPOLATION" source="#UpperLeftArm_human_low-proxy741_001Action_transform-interpolation"/>
+        </sampler>
+        <channel source="#UpperLeftArm_human_low-proxy741_001Action_transform-sampler" target="UpperLeftArm/transform"/>
+      </animation>
+    </animation>
+    <animation id="action_container-UpperLeftLeg" name="UpperLeftLeg">
+      <animation id="UpperLeftLeg_human_low-proxy741_003Action_001_transform" name="UpperLeftLeg">
+        <source id="UpperLeftLeg_human_low-proxy741_003Action_001_transform-input">
+          <float_array id="UpperLeftLeg_human_low-proxy741_003Action_001_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#UpperLeftLeg_human_low-proxy741_003Action_001_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="UpperLeftLeg_human_low-proxy741_003Action_001_transform-output">
+          <float_array id="UpperLeftLeg_human_low-proxy741_003Action_001_transform-output-array" count="320">1 5.72763e-8 4.87362e-8 0.09228072 -8.9743e-8 0.8191522 0.5735765 -0.08576236 -1.04641e-9 -0.5735765 0.8191521 -0.2323347 0 0 0 1 1 7.27225e-8 3.30731e-8 0.09228071 -8.9743e-8 0.8329213 0.5533915 -0.08576235 -1.04641e-9 -0.5533915 0.8329213 -0.2323347 0 0 0 1 1 7.25526e-8 4.89307e-8 0.09228072 -8.9743e-8 0.8677655 0.4969739 -0.08576236 -1.04641e-9 -0.4969739 0.8677655 -0.2323346 0 0 0 1 1 6.55238e-8 3.41999e-8 0.09228071 -8.22924e-8 0.9121202 0.409923 -0.08576235 -1.97773e-9 -0.409923 0.9121201 -0.2323346 0 0 0 1 1 8.46817e-8 2.59684e-8 0.09228071 -8.9743e-8 0.9542404 0.2990407 -0.08576234 -1.15083e-10 -0.2990407 0.9542403 -0.2323346 0 0 0 1 1 8.3545e-8 1.55165e-8 0.09228072 -8.49702e-8 0.9848078 0.1736481 -0.08576235 -7.7332e-10 -0.1736481 0.9848078 -0.2323346 0 0 0 1 1 8.58767e-8 4.65253e-9 0.09228072 -8.22924e-8 0.9989706 0.0453629 -0.08576236 -1.04641e-9 -0.04536292 0.9989706 -0.2323346 0 0 0 1 1 9.76021e-8 -6.57916e-9 0.09228071 -8.22924e-8 0.9973145 -0.07323823 -0.08576235 -1.04641e-9 0.07323823 0.9973145 -0.2323347 0 0 0 1 1 9.05965e-8 -1.41243e-8 0.09228072 -8.9743e-8 0.9854079 -0.1702096 -0.08576237 -1.15083e-10 0.1702096 0.9854079 -0.2323346 0 0 0 1 1 4.61888e-8 -1.79384e-8 0.09228071 -8.9743e-8 0.971961 -0.2351422 -0.08576235 -1.15083e-10 0.2351422 0.971961 -0.2323347 0 0 0 1 1 -2.82097e-8 -3.0748e-9 0.09228072 3.18115e-8 0.9659258 -0.2588191 -0.08576237 1.55147e-8 0.2588192 0.9659258 -0.2323346 0 0 0 1 1 -2.802e-8 -5.8798e-9 0.09228071 3.18115e-8 0.971961 -0.2351422 -0.08576236 1.73773e-8 0.2351422 0.971961 -0.2323346 0 0 0 1 1 -2.88507e-8 -1.12995e-8 0.09228072 1.69104e-8 0.9854079 -0.1702096 -0.08576237 1.55147e-8 0.1702096 0.9854079 -0.2323346 0 0 0 1 1 -2.16072e-8 -1.58924e-8 0.09228072 3.18115e-8 0.9973145 -0.07323827 -0.08576235 1.55147e-8 0.07323827 0.9973145 -0.2323347 0 0 0 1 1 -3.33326e-8 -1.72336e-8 0.09228071 3.55368e-8 0.9989706 0.04536296 -0.08576235 1.55147e-8 -0.04536296 0.9989706 -0.2323346 0 0 0 1 1 -3.002e-8 -2.143e-8 0.09228072 3.32852e-8 0.9848078 0.1736482 -0.08576236 1.58915e-8 -0.1736482 0.9848078 -0.2323347 0 0 0 1 1 -2.7077e-8 -2.52543e-8 0.09228071 3.18115e-8 0.9542404 0.2990407 -0.08576233 1.59803e-8 -0.2990407 0.9542403 -0.2323346 0 0 0 1 1 -2.38831e-8 -3.28553e-8 0.0922807 3.18115e-8 0.9121201 0.409923 -0.08576234 1.6446e-8 -0.409923 0.91212 -0.2323346 0 0 0 1 1 -2.4305e-8 -3.30257e-8 0.09228071 3.18115e-8 0.8677654 0.496974 -0.08576235 1.55147e-8 -0.4969741 0.8677654 -0.2323346 0 0 0 1 1 -1.62386e-8 -1.98987e-8 0.09228071 1.69104e-8 0.8329212 0.5533916 -0.08576235 1.55147e-8 -0.5533916 0.8329213 -0.2323346 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#UpperLeftLeg_human_low-proxy741_003Action_001_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="UpperLeftLeg_human_low-proxy741_003Action_001_transform-interpolation">
+          <Name_array id="UpperLeftLeg_human_low-proxy741_003Action_001_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#UpperLeftLeg_human_low-proxy741_003Action_001_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="UpperLeftLeg_human_low-proxy741_003Action_001_transform-sampler">
+          <input semantic="INPUT" source="#UpperLeftLeg_human_low-proxy741_003Action_001_transform-input"/>
+          <input semantic="OUTPUT" source="#UpperLeftLeg_human_low-proxy741_003Action_001_transform-output"/>
+          <input semantic="INTERPOLATION" source="#UpperLeftLeg_human_low-proxy741_003Action_001_transform-interpolation"/>
+        </sampler>
+        <channel source="#UpperLeftLeg_human_low-proxy741_003Action_001_transform-sampler" target="UpperLeftLeg/transform"/>
+      </animation>
+    </animation>
+    <animation id="action_container-UpperRightArm" name="UpperRightArm">
+      <animation id="UpperRightArm_human_low-proxy741_008Action_transform" name="UpperRightArm">
+        <source id="UpperRightArm_human_low-proxy741_008Action_transform-input">
+          <float_array id="UpperRightArm_human_low-proxy741_008Action_transform-input-array" count="20">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667</float_array>
+          <technique_common>
+            <accessor source="#UpperRightArm_human_low-proxy741_008Action_transform-input-array" count="20" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="UpperRightArm_human_low-proxy741_008Action_transform-output">
+          <float_array id="UpperRightArm_human_low-proxy741_008Action_transform-output-array" count="320">1 2.93965e-8 8.36418e-9 -0.1805467 -3.00898e-8 0.9848078 0.1736482 0.04603668 -6.07984e-9 -0.1736482 0.9848078 1.393106 0 0 0 1 1 4.44332e-8 6.50944e-9 -0.1805467 -4.4991e-8 0.9872476 0.159192 0.04603668 -6.07984e-9 -0.159192 0.9872476 1.393106 0 0 0 1 1 1.47484e-8 8.84506e-9 -0.1805467 -3.00898e-8 0.9927993 0.1197903 0.04603668 -5.14852e-9 -0.1197903 0.9927993 1.393106 0 0 0 1 1 2.2472e-8 6.98337e-9 -0.1805467 -2.26392e-8 0.9981135 0.06139698 0.04603669 -6.07984e-9 -0.06139698 0.9981134 1.393106 0 0 0 1 1 2.65282e-8 5.10037e-9 -0.1805467 -2.63645e-8 0.9999523 -0.009773664 0.04603668 -5.14852e-9 0.009773672 0.9999523 1.393106 0 0 0 1 1 2.43876e-8 3.43676e-9 -0.1805467 -2.39952e-8 0.9961948 -0.08715571 0.04603669 -5.54919e-9 0.08715571 0.9961948 1.393106 0 0 0 1 1 2.35129e-8 3.57818e-9 -0.1805467 -1.89139e-8 0.9864579 -0.1640146 0.04603669 -5.61418e-9 0.1640146 0.9864579 1.393106 0 0 0 1 1 3.12814e-8 -3.03512e-9 -0.1805467 -2.26392e-8 0.9722883 -0.2337847 0.04603669 -6.07984e-9 0.2337848 0.9722884 1.393106 0 0 0 1 1 4.64388e-8 4.32118e-9 -0.1805467 -3.00898e-8 0.956915 -0.2903682 0.04603668 -5.14852e-9 0.2903682 0.9569151 1.393106 0 0 0 1 1 1.6807e-8 -3.20186e-9 -0.1805467 -3.00898e-8 0.9446057 -0.3282074 0.04603669 -4.2172e-9 0.3282073 0.9446057 1.393106 0 0 0 1 1 -2.78344e-8 -1.06808e-8 -0.1805467 4.74107e-8 0.9396926 -0.3420201 0.04603668 2.16302e-8 0.3420202 0.9396926 1.393106 0 0 0 1 1 -5.73176e-8 -2.35211e-9 -0.1805467 4.74107e-8 0.9446058 -0.3282073 0.04603669 2.34928e-8 0.3282073 0.9446057 1.393106 0 0 0 1 1 -2.8414e-8 -1.14442e-8 -0.1805467 3.25095e-8 0.956915 -0.2903681 0.04603668 2.25615e-8 0.2903682 0.9569151 1.393106 0 0 0 1 1 -3.57738e-8 -1.79363e-8 -0.1805467 4.74107e-8 0.9722883 -0.2337847 0.04603669 2.25615e-8 0.2337848 0.9722884 1.393106 0 0 0 1 1 -4.35423e-8 -1.31856e-8 -0.1805467 4.36854e-8 0.9864579 -0.1640146 0.04603669 2.30272e-8 0.1640146 0.9864579 1.393106 0 0 0 1 1 -4.51617e-8 -1.91899e-8 -0.1805467 4.33173e-8 0.9961947 -0.08715568 0.04603668 2.3053e-8 0.08715568 0.9961947 1.393106 0 0 0 1 1 -4.0527e-8 -2.3305e-8 -0.1805467 3.99601e-8 0.9999523 -0.009773642 0.04603669 2.30272e-8 0.009773649 0.9999523 1.393106 0 0 0 1 1 -4.45832e-8 -2.51473e-8 -0.1805467 4.74107e-8 0.9981135 0.06139701 0.04603669 2.25615e-8 -0.06139701 0.9981134 1.393106 0 0 0 1 1 -5.97574e-8 -2.65452e-8 -0.1805467 4.74107e-8 0.9927993 0.1197903 0.04603668 2.25615e-8 -0.1197903 0.9927993 1.393106 0 0 0 1 1 -3.0005e-8 -2.7947e-8 -0.1805467 3.25095e-8 0.9872476 0.1591921 0.04603668 2.16302e-8 -0.1591921 0.9872476 1.393106 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#UpperRightArm_human_low-proxy741_008Action_transform-output-array" count="20" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="UpperRightArm_human_low-proxy741_008Action_transform-interpolation">
+          <Name_array id="UpperRightArm_human_low-proxy741_008Action_transform-interpolation-array" count="20">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#UpperRightArm_human_low-proxy741_008Action_transform-interpolation-array" count="20" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="UpperRightArm_human_low-proxy741_008Action_transform-sampler">
+          <input semantic="INPUT" source="#UpperRightArm_human_low-proxy741_008Action_transform-input"/>
+          <input semantic="OUTPUT" source="#UpperRightArm_human_low-proxy741_008Action_transform-output"/>
+          <input semantic="INTERPOLATION" source="#UpperRightArm_human_low-proxy741_008Action_transform-interpolation"/>
+        </sampler>
+        <channel source="#UpperRightArm_human_low-proxy741_008Action_transform-sampler" target="UpperRightArm/transform"/>
+      </animation>
+    </animation>
+  </library_animations>

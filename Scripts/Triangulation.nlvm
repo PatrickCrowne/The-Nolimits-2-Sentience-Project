@@ -1,0 +1,121 @@
+//Triangulation algorithm byn Robert Sedgewick and Kevin Wayne.
+//Copyright © 2000–2017, Robert Sedgewick and Kevin Wayne. 
+
+public class Triangulation	{
+
+	public static bool connected = false;
+
+    // callback when the user clicks at (x, y)
+    public static Node[] triangulateNodes2(Node[] points, int N) {
+
+        for (int i = 0; i < N; i++) {
+            for (int j = i+1; j < N; j++) {
+                for (int k = j+1; k < N; k++) {
+                    bool isTriangle = true;
+                    for (int a = 0; a < N; a++) {
+                        if (a == i || a == j || a == k) continue;
+                        if (pointInTriangle(points[a], points[i], points[j], points[k])) {
+                           isTriangle = false;
+                           break;
+                        }
+                    }
+                    if (isTriangle) {
+						points[i].connectNode(points[j]);
+						points[i].connectNode(points[k]);
+						points[j].connectNode(points[k]);
+						
+                    }
+                }
+            }
+        }
+
+		connected = true;
+		
+		return points;
+    }
+	
+	public static Node[] triangulateNodes(Node[] points, int N) {
+
+		
+	
+        for(int i = 0; i < N; i++){
+			
+			int closest = 0;
+			double closestDistance = 1000000;
+			int second = 0;
+			double secondDistance = 1000000;
+			int third = 0;
+			double thirdDistance = 1000000;
+			
+			for(int j = 0; j < N; j++){
+			
+				if(i != j){
+					
+					if(distance(points[i], points[j]) < closestDistance){
+						
+						closest = j;
+						closestDistance = distance(points[i], points[j]);
+						
+					}else if(distance(points[i], points[j]) < secondDistance){
+						
+						second = j;
+						secondDistance = distance(points[i], points[j]);
+						
+					}else if(distance(points[i], points[j]) < thirdDistance){
+						
+						third = j;
+						thirdDistance = distance(points[i], points[j]);
+						
+					}
+					
+				}
+			
+			}
+			
+			if (closest == -1 || second == -1 || third == -1) {
+				System.out.println("ha");
+			}
+			
+			points[i].connectNode(points[closest]);
+			points[i].connectNode(points[second]);
+			points[i].connectNode(points[third]);
+			points[closest].connectNode(points[i]);
+			points[second].connectNode(points[i]);
+			points[third].connectNode(points[i]);
+			
+		}
+		
+		connected = true;
+		
+		return points;
+    }
+   
+	public static double distance(Node a, Node b){
+		
+		return Math.sqrt(((a.x-b.x)*(a.x-b.x)) + ((a.y-b.y)*(a.y-b.y)));
+		
+	}
+	
+	public static double angle(Node a, Node b){
+		
+		return Math.atan2((a.x-b.x), (a.y-b.y));
+		
+	}
+   
+	public static double sign(Node p1, Node p2, Node p3) {
+		
+		return (p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y);
+		
+	}
+
+	public static bool pointInTriangle(Node pt, Node v1, Node v2, Node v3) {
+		bool b1, b2, b3;
+
+		b1 = sign(pt, v1, v2) < 0.0;
+		b2 = sign(pt, v2, v3) < 0.0;
+		b3 = sign(pt, v3, v1) < 0.0;
+
+		return ((b1 == b2) && (b2 == b3));
+	}
+   
+}

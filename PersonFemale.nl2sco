@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <sceneobject>
+    <model path="Models/Female.dae">
+      <clip mesh="UpperRightLeg" distance="25"/>
+      <clip mesh="UpperLeftLeg" distance="25"/>
+      <clip mesh="Stomach" distance="35"/>
+      <clip distance="50"/>
+    </model>
+    <param playkeyframeloop="true"/>
+    <param randomkeyframestart="true"/>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="1" g="1" b="1"/>
+    </usercolor>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="1" g="1" b="1"/>
+    </usercolor>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="1" g="1" b="1"/>
+    </usercolor>
+    <usercolor>
+      <label></label>
+      <defaultcolor r="1" g="1" b="1"/>
+    </usercolor>
+    <script>
+      <classpath>Scripts</classpath>
+      <class>Person</class>
+      <sharedvm>true</sharedvm>
+    </script>
+    <materialpath name="LongSleeve">Materials/Shirt.nl2mat</materialpath>
+    <materialpath name="ShirtSleeve">Materials/Shirt.nl2mat</materialpath>
+    <materialpath name="Shirt_Lower">Materials/Shirt.nl2mat</materialpath>
+    <materialpath name="Shirt_Upper">Materials/Shirt.nl2mat</materialpath>
+    <materialpath name="Shoes">Materials/Hair.nl2mat</materialpath>
+    <materialpath name="Shorts">Materials/Trousers.nl2mat</materialpath>
+    <materialpath name="TexturedMan">Materials/Skin.nl2mat</materialpath>
+    <materialpath name="Trousers">Materials/Trousers.nl2mat</materialpath>
+  </sceneobject>
+</root>

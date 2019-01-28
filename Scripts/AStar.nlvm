@@ -1,0 +1,192 @@
+import nlvm.math3d.*;
+
+public class AStar {
+
+	public static int nodeTestCount = 1;
+	public static double[] localGoal;
+	public static double[] globalGoal;
+	public static Node[] findFastestRoute(Node[] n, int nodeCount, int source, int destination){
+		
+		Node startingNode = n[source];
+		Node endingNode = n[destination];
+		int current = source;
+		globalGoal = new double[nodeCount];
+		localGoal = new double[nodeCount];
+		bool[] visited = new bool[nodeCount];
+		int[] parents = new int[nodeCount];
+		 nodeTestCount = 1;
+		int[] nodesToTest = new int[1000];
+		
+		nodesToTest[0] = source;
+		
+		//Setup goals
+		for(int i = 0; i < nodeCount; i++){
+		
+			if(i == source){
+				localGoal[i] = 0; 
+				globalGoal[i] = Triangulation.distance(n[current], endingNode);
+			}else{
+				localGoal[i] = 1000000;
+				globalGoal[i] = 1000000;
+			}
+
+		}
+		
+		int lastNodeC = 0;
+		int nodeC = 0;
+		
+		while(nodeTestCount > 0){
+			
+			
+				//Remove current node from testing pool
+				visited[current] = true;
+				nodeTestCount--;
+				//Test connections
+				for(int i2 = 0; i2 < n[current].connections; i2++){
+					
+					lastNodeC = nodeC;
+					nodeC = getNodeFromArray(n, nodeCount, n[current].connection[i2]);
+					
+					
+					
+					if(!visited[nodeC]){
+						
+						nodesToTest[nodeTestCount] = nodeC;
+						nodeTestCount++;
+						parents[nodeC] = current;
+						
+						if(localGoal[current] + Triangulation.distance(n[nodeC], n[current])< localGoal[nodeC]){
+							
+							
+							localGoal[nodeC] = localGoal[current] + Triangulation.distance(n[nodeC], n[current]);
+							globalGoal[nodeC] = localGoal[nodeC] + Triangulation.distance(n[nodeC], endingNode);
+							
+						}
+						
+					}
+					
+					
+				}
+				
+			
+		
+			nodesToTest = sortList(nodesToTest, nodeTestCount);
+			if(nodeTestCount > 0){
+				current = nodesToTest[nodeTestCount-1];
+			}else{
+				current = nodesToTest[nodeTestCount];
+			}
+			
+			
+		}
+		
+		int back = lastNodeC;
+		int backIndex = 0;
+		
+		Node[] pathTemp = new Node[100];
+		
+		pathTemp[backIndex] = n[destination];
+		backIndex++;
+		
+		pathTemp[backIndex] = n[back];
+		backIndex++;
+		
+		while(back != source){
+			
+			back = parents[back];
+			
+			pathTemp[backIndex] = n[back];
+			backIndex++;
+			
+			
+			
+		}
+		
+		Node[] path = new Node[backIndex];
+		
+		for(int i = 0; i < backIndex; i++){
+			
+			path[i] = pathTemp[i];
+			
+		}
+		
+		return path;
+		
+	}
+	
+	public static int[] sortList(int[] list, int nodeCount){
+		
+		int count = 0;
+		int[] newList = new int[1000];
+		for(int i = 0; i < nodeCount; i++){
+			
+			bool inserted = false;
+			
+			for(int j = 0; j < count; j++){
+			
+				if(globalGoal[list[i]] < globalGoal[newList[j]] && !inserted){
+					
+					newList = insertIntoArray(newList, j, list[i], nodeCount);
+					count++;
+					inserted = true;
+					
+				}
+			
+			}
+			
+			if(!inserted){
+				
+				newList[count] = list[i];
+				count++;
+				
+			}
+			
+		}
+		
+		nodeTestCount = count;
+		return newList;
+		
+	}
+	
+	public static int[] insertIntoArray(int[] arr, int index, int value, int nodeCount){
+		
+		int[] out = new int[1000];
+		
+		for(int j = 0; j < index; j++){
+			
+			out[j] = arr[j];
+			
+		}
+		
+		for(int j = index; j < nodeCount; j++){
+			
+			out[j+1] = arr[j];
+			
+		}
+		
+		out[index] = value;
+
+		
+	
+		
+		return out;
+		
+	}
+	
+	public static int getNodeFromArray(Node[] nodes, int nodeCount, Node n){
+		
+		for(int i = 0; i < nodeCount; i++){
+			
+			if(nodes[i] == n){
+				
+				return i;
+				
+			}
+			
+		}
+		
+		return 0;
+		
+	}
+	
+}
