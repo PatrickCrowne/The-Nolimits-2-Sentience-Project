@@ -12,7 +12,9 @@ public class Node	{
   public static final int PATH_START = 3;
   public static final int PATH_END = 4;
 	public static final int BOARD = 5;
-	
+  
+  public static final bool NODES_VISIBLE = false;
+  
 	public SceneObject sco;
 	private SceneObjectElement[] scoe = new SceneObjectElement[7];
 	public double x, y;
@@ -37,12 +39,12 @@ public class Node	{
 		
 		sco = sceneObject;
 		
-		//sco.getElementForName("NODE").setVisible(false);
+		sco.getElementForName("NODE").setVisible(NODES_VISIBLE);
 		
 		for(int i = 0; i < scoe.length; i++){
 			
 			scoe[i] = sco.getElementForName("Connection" + i);
-			//scoe[i].setVisible(false);
+			scoe[i].setVisible(NODES_VISIBLE);
 			
 		}
 		
