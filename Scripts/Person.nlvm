@@ -225,7 +225,7 @@ public class Person extends Script{
 			
 			nextNode = (int)((float)Math.random() * (float)NodeNetwork.nodeCount);
 			
-			while (NodeNetwork.getNodeForID(nextNode).blocked == true) {
+			while (NodeNetwork.getNodeForID(nextNode).blocked == true || NodeNetwork.getNodeForID(nextNode).TYPE == Node.PATH) {
 				
 				nextNode = (int)((float)Math.random() * (float)NodeNetwork.nodeCount);
 				
@@ -265,18 +265,47 @@ public class Person extends Script{
 			
 			desiredHeading = (float)Math.atan2(xOffset,zOffset) - (float)Math.PI/2.0f;
 			
-			if (currentHeading < desiredHeading) {
+      if (Math.abs(currentHeading-desiredHeading) < Math.PI/2.0f) {
+      
+        if (currentHeading < desiredHeading) {
 				
-				currentHeading += (float)Math.abs(currentHeading-desiredHeading) * turnRate * sim.getCurSimulationTickSec();
+          currentHeading += turnRate * sim.getCurSimulationTickSec();
 				
-			}
-			if (currentHeading > desiredHeading) {
+        }
+        if (currentHeading > desiredHeading) {
 				
-				currentHeading -= (float)Math.abs(currentHeading-desiredHeading) * turnRate * sim.getCurSimulationTickSec();
+          currentHeading -= turnRate * sim.getCurSimulationTickSec();
 				
-			}
+        }
+      
+      } else {
+        
+        if (currentHeading < desiredHeading) {
+				
+          currentHeading -= turnRate * sim.getCurSimulationTickSec();
+				
+        }
+        if (currentHeading > desiredHeading) {
+				
+          currentHeading += turnRate * sim.getCurSimulationTickSec();
+				
+        }
+        
+      }
 			
-			head.setRotation(0,desiredHeading-currentHeading,0);
+      if (currentHeading > Math.PI) {
+        
+        currentHeading -= 2 * Math.PI;
+        
+      }
+      
+      if (currentHeading < -Math.PI) {
+        
+        currentHeading += 2 * Math.PI;
+        
+      }
+      
+			head.setRotation(0,0,0);
 			
 			if (boarded) {
 				
@@ -293,7 +322,7 @@ public class Person extends Script{
 				
 			} else {
 				
-				sco.setRotation(0,currentHeading,0);
+				sco.setRotation(0,desiredHeading,0);
 				sco.setTranslation(posCur.x + (xOffset * pos),
 				posCur.y + (yOffset * pos) -0.25f,
 				posCur.z + (zOffset * pos));
