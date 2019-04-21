@@ -76,7 +76,8 @@ public class Person extends Script{
 	private float desiredHeading = 0;
 	private float turnRate = 3.0f;
   private float temp = 0;
-	
+	private float viewDistance = 0;
+  
 	public bool onInit(){
 		
     // Load sco file into memory
@@ -148,10 +149,11 @@ public class Person extends Script{
 				boardObject = sim.getSceneObject(cn.sco.getStringParameter("SceneObject")).getElementForName(cn.sco.getStringParameter("SceneObjectElement"));
 				
 				if (boardObject != null) {
-					
+          
 					currentAnim = sitting;
 					boarded = true;
-					
+					NodeNetwork.getNodeForID(currentNode).blocked = true;
+          
 				}
 				
 			}
@@ -177,13 +179,13 @@ public class Person extends Script{
 			
 			tries++;
 		}
-		
+    
 		if (nextNode == lastNode || nextNode == 0 || temp.blocked == true) {
 			
-			placed = false;
+			nextNode = currentNode;
 			
 		}
-		
+    
 		posNext = NodeNetwork.getNodeForID(nextNode).sco.getTranslation();
 		
 		float x = posCur.x - posNext.x;
@@ -225,7 +227,7 @@ public class Person extends Script{
 			
 			nextNode = (int)((float)Math.random() * (float)NodeNetwork.nodeCount);
 			
-			while (NodeNetwork.getNodeForID(nextNode).blocked == true || NodeNetwork.getNodeForID(nextNode).TYPE == Node.PATH) {
+			while (NodeNetwork.getNodeForID(nextNode).blocked == true || NodeNetwork.getNodeForID(nextNode).TYPE == Node.PATH || NodeNetwork.getNodeForID(nextNode).TYPE == Node.PATH_END || NodeNetwork.getNodeForID(nextNode).TYPE == Node.PATH_START || NodeNetwork.getNodeForID(nextNode).TYPE == Node.BOARD) {
 				
 				nextNode = (int)((float)Math.random() * (float)NodeNetwork.nodeCount);
 				
@@ -242,27 +244,27 @@ public class Person extends Script{
 			
 		}
 		
-		Vector3f viewPos = new Vector3f();
-		Vector3f scoPos = sco.getTranslation();
-		sim.getViewPos(viewPos);
-		float viewDistance = ((viewPos.x-scoPos.x)*(viewPos.x-scoPos.x)) + ((viewPos.y-scoPos.y)*(viewPos.y-scoPos.y)) + ((viewPos.z-scoPos.z)*(viewPos.z-scoPos.z));
+    if (Math.random() < 0.01) {
+      Vector3f viewPos = new Vector3f();
+      Vector3f scoPos = sco.getTranslation();
+      sim.getViewPos(viewPos);
+      viewDistance = ((viewPos.x-scoPos.x)*(viewPos.x-scoPos.x)) + ((viewPos.y-scoPos.y)*(viewPos.y-scoPos.y)) + (( viewPos.z-scoPos.z)*(viewPos.z-scoPos.z));
+    }
 		
 		if (placed && inRange) {
 			
-			// Animations
-			
-			if (currentFrame < animationLength) {
+      if (currentFrame < animationLength) {
 				
-				currentFrame += sim.getCurSimulationTickSec() * speed / 2.0f;
-				if(currentFrame > animationLength){
-					
-					currentFrame = 0;
-					
-				}
-				sco.setKeyFrameAnimationTime(currentFrame + currentAnim);
+        currentFrame += sim.getCurSimulationTickSec() * speed / 2.0f;
+        if(currentFrame > animationLength){
+            
+          currentFrame = 0;
+            
+        }
+        sco.setKeyFrameAnimationTime(currentFrame + currentAnim);
 				
-			}
-			
+      }
+      
 			desiredHeading = (float)Math.atan2(xOffset,zOffset) - (float)Math.PI/2.0f;
 			
       if (Math.abs(currentHeading-desiredHeading) < Math.PI/2.0f) {
@@ -360,6 +362,8 @@ public class Person extends Script{
 			
 		}
 		
+    
+    
 		if (viewDistance < 10000) {
 			
 			inRange = true;

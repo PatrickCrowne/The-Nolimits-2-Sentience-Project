@@ -4,8 +4,6 @@
     <model path="Models/Switch_Type_A.dae">
       <clip distance="50"/>
     </model>
-    <param playkeyframeloop="true"/>
-    <param randomkeyframestart="true"/>
     <usercolor>
       <label></label>
       <defaultcolor r="1" g="1" b="1"/>

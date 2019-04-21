@@ -13,7 +13,7 @@ public class Node	{
   public static final int PATH_END = 4;
 	public static final int BOARD = 5;
   
-  public static final bool NODES_VISIBLE = false;
+  public static final bool NODES_VISIBLE = true;
   
 	public SceneObject sco;
 	private SceneObjectElement[] scoe = new SceneObjectElement[7];
