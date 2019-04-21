@@ -9,7 +9,9 @@ public class Node	{
 	public static final int DEFAULT = 0;
 	public static final int BLOCKED = 1;
 	public static final int PATH = 2;
-	public static final int BOARD = 3;
+  public static final int PATH_START = 3;
+  public static final int PATH_END = 4;
+	public static final int BOARD = 5;
 	
 	public SceneObject sco;
 	private SceneObjectElement[] scoe = new SceneObjectElement[7];
@@ -19,6 +21,8 @@ public class Node	{
 	public Node[] connection = new Node[70];
 	public double[] connectionDistance = new double[70];
 	
+  public Person lastPerson = null;
+  
 	public Node(SceneObject sceneObject, int id, int type){
 		
 		ID = id;
@@ -33,12 +37,12 @@ public class Node	{
 		
 		sco = sceneObject;
 		
-		sco.getElementForName("NODE").setVisible(false);
+		//sco.getElementForName("NODE").setVisible(false);
 		
 		for(int i = 0; i < scoe.length; i++){
 			
 			scoe[i] = sco.getElementForName("Connection" + i);
-			scoe[i].setVisible(false);
+			//scoe[i].setVisible(false);
 			
 		}
 		

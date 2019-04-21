@@ -2,24 +2,15 @@ import com.nolimitscoaster.*;
 import nlvm.math3d.*;
 
 public class Person extends Script{
-	
-	private int lastNode = 0;
-	private int currentNode = 0;
-	private int nextNode = 0;
-	private bool placed = false;
-	
-	private float speed = 1.0f + (float)(Math.random() * 1.0f);
-	private float distance = 0;
-	private float pos = 0;
-	
-	//Colour choices;
-	Vector4f[] shorts = {
+  
+  // Colour choices;
+	private Vector4f[] shorts = {
 		new Vector4f(130.0f/255.0f, 158.0f/255.0f, 204.0f/255.0f, 1.0f),
 		new Vector4f(161.0f/255.0f, 165.0f/255.0f, 173.0f/255.0f, 1.0f),
 		new Vector4f(226.0f/255.0f, 214.0f/255.0f, 181.0f/255.0f, 1.0f),
 		new Vector4f(100.0f/255.0f, 116.0f/255.0f, 150.0f/255.0f, 1.0f)
 	};
-	Vector4f[] shirts = {
+	private Vector4f[] shirts = {
 		new Vector4f(76.0f/255.0f, 133.0f/255.0f, 224.0f/255.0f, 1.0f),
 		new Vector4f(27.0f/255.0f, 66.0f/255.0f, 130.0f/255.0f, 1.0f),
 		new Vector4f(165.0f/255.0f, 181.0f/255.0f, 209.0f/255.0f, 1.0f),
@@ -32,57 +23,66 @@ public class Person extends Script{
 		new Vector4f(139.0f/255.0f, 178.0f/255.0f, 175.0f/255.0f, 1.0f),
 		new Vector4f(135.0f/255.0f, 135.0f/255.0f, 135.0f/255.0f, 1.0f)
 	};
-	
-	//Animation Ranges
+  
+	// Animation Variables
 	private float frameRate = 24;
 	private float animationLength = 20/frameRate;
 	public float walking = 0/frameRate;
 	public float sitting = 30/frameRate;
-	
 	private float currentAnim = walking;
 	private float currentFrame = (float) Math.random() * animationLength;
 	
-	//Body Parts
-	SceneObjectElement head;
-	SceneObjectElement chest;
+	// Body Parts
+  public SceneObject sco;
+	private SceneObjectElement head;
+	private SceneObjectElement chest;
 	
-	//Physical Characteristics
-	float height = ((float)Math.random()*0.25f + 0.75f) * 1.1f;
-	
-	//Temporary Variables
-	Coaster nearestCoaster = null;
-	Train nearestTrain = null;
-	bool stopped = false;
-	bool boarded = false;
-	bool inRange = true;
-	SceneObjectElement boardObject;
-	
-	
-	Vector4f shirt = shirts[(int)((float)Math.random() * (float)shirts.length)];
-	Vector4f trousers = shorts[(int)((float)Math.random() * (float)shorts.length)];
-	
-	float skinTone = (float)Math.random()* 0.75f + 0.25f;
-	Vector4f skin = new Vector4f(255.0f/255.0f*skinTone,224.0f/255.0f*skinTone,189.0f/255.0f*skinTone,1);
-	
-	float hairTone = (float)Math.random()/3.0f;
-	Vector4f hair = new Vector4f(250.0f/255.0f*hairTone,240.0f/255.0f*hairTone,190.0f/255.0f*hairTone,1);
-	
-	Vector3f posCur = new Vector3f(0,0,0);
-	Vector3f posNext = new Vector3f(0,0,0);
-	float xOffset = 0;
-	float yOffset = 0;
-	float zOffset = 0;
-	
-	float currentHeading = 0;
-	float desiredHeading = 0;
-	float turnRate = 3.0f;
-	
-	private SceneObject sco;
+	// Physical Characteristics
+  private float speed = 1.0f + (float)(Math.random() * 1.0f);
+	private float height = ((float)Math.random()*0.25f + 0.75f) * 1.1f;
+  private float skinTone = (float)Math.random()* 0.75f + 0.25f;
+  private float hairTone = (float)Math.random()/3.0f;
+  private Vector4f shirt = shirts[(int)((float)Math.random() * (float)shirts.length)];
+	private Vector4f trousers = shorts[(int)((float)Math.random() * (float)shorts.length)];
+	private Vector4f skin = new Vector4f(255.0f/255.0f*skinTone,224.0f/255.0f*skinTone,189.0f/255.0f*skinTone,1);	
+	private Vector4f hair = new Vector4f(250.0f/255.0f*hairTone,240.0f/255.0f*hairTone,190.0f/255.0f*hairTone,1);
+  
+  // Constants
+	private float PERSONAL_SPACE = 0.5f;
+  
+	// Queueing, Boarding and Riding Variables
+	public Coaster nearestCoaster = null;
+	public Train nearestTrain = null;
+	public bool stopped = false;
+	public bool boarded = false;
+	public bool inRange = true;
+	public SceneObjectElement boardObject;
+  public Person personInfront = null;
+  public bool isQueuing = false;
+  
+	// Positional Information
+	private Vector3f posCur = new Vector3f(0,0,0);
+	private Vector3f posNext = new Vector3f(0,0,0);
+	private float xOffset = 0;
+	private float yOffset = 0;
+	private float zOffset = 0;
+	private int lastNode = 0;
+	private int currentNode = 0;
+	private int nextNode = 0;
+	private bool placed = false;
+	private float distance = 0;
+	private float pos = 0;
+	private float currentHeading = 0;
+	private float desiredHeading = 0;
+	private float turnRate = 3.0f;
+  private float temp = 0;
 	
 	public bool onInit(){
 		
+    // Load sco file into memory
 		sco = sim.getSceneObjectForEntityId(getParentEntityId());
 		
+    // Get bodyparts
 		head = sco.getElementForName("Head");
 		chest = sco.getElementForName("Chest");
 		
@@ -120,7 +120,14 @@ public class Person extends Script{
 		
 	}
 	
-	float temp = 0;
+	public float getDistanceToPerson(Person p) {
+    
+    Vector3f a = sco.getTranslation();
+    Vector3f b = p.sco.getTranslation();
+    
+    return a.distance(b);
+    
+  }
 	
 	public void getNextNode() {
 		
@@ -162,7 +169,7 @@ public class Person extends Script{
 		nextNode = temp.ID;
 		
 		int tries = 0;
-		
+    
 		while ((nextNode == lastNode || nextNode == 0 || temp.blocked == true) && tries < 20) {
 			
 			temp = nodes[(int)((float)Math.random() * (float)count)];
@@ -190,6 +197,25 @@ public class Person extends Script{
 		distance = (float) Math.sqrt((x*x) + (y*y) + (z*z));
 		
 		}
+    
+    Node nextNodeTemp = NodeNetwork.getNodeForID(nextNode);
+    
+    if (nextNodeTemp.TYPE == Node.PATH_START) {
+      
+      isQueuing = true;
+      personInfront = nextNodeTemp.lastPerson;
+      nextNodeTemp.lastPerson = this;
+      
+      System.out.println(nextNodeTemp.lastPerson);
+      
+    }
+    
+    if (NodeNetwork.getNodeForID(lastNode).TYPE == Node.PATH_END) {
+      
+      isQueuing = false;
+      personInfront = null;
+      
+    }
 		
 	}
 	  
@@ -274,6 +300,21 @@ public class Person extends Script{
 				
 			}
 			
+      // Check for collision
+      if (isQueuing && personInfront != null) {
+        
+        if (getDistanceToPerson(personInfront) < PERSONAL_SPACE) {
+          
+          stopped = true;
+          
+        }
+        else {
+          
+          stopped = false;
+          
+        }
+        
+      }
 			
 			if (!stopped) {
 			
