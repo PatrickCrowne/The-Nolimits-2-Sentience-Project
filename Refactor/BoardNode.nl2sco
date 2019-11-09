@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <sceneobject>
+    <model path="Models/Node.dae"/>
+    <script>
+      <classpath>Scripts</classpath>
+      <class>BoardObject</class>
+      <sharedvm>true</sharedvm>
+    </script>
+    <scriptparameter>
+      <type>string</type>
+      <defaultvalue>FRONTCAR</defaultvalue>
+      <id>SceneObject</id>
+      <description>The SceneObject to attach to</description>
+      <label>SceneObject</label>
+    </scriptparameter>
+    <scriptparameter>
+      <type>string</type>
+      <defaultvalue>Camera01</defaultvalue>
+      <id>SceneObjectElement</id>
+      <description>the SceneObjectElement to attach to</description>
+      <label>SceneObjectElement</label>
+    </scriptparameter>
+    <materialpath name="Connection">Materials/Connection.nl2mat</materialpath>
+    <materialpath name="Material">Materials/BoardNode.nl2mat</materialpath>
+  </sceneobject>
+</root>

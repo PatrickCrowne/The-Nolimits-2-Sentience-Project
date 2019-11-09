@@ -87,6 +87,8 @@ public class Person extends Script{
 		head = sco.getElementForName("Head");
 		chest = sco.getElementForName("Chest");
 		
+    PERSONAL_SPACE += (float)Math.random();
+    
 		float random = (float)Math.random();
 		
 		for (int i = 0; i < sco.getElementCount(); i++) {
@@ -134,6 +136,14 @@ public class Person extends Script{
 		
 		currentNode = nextNode;
 		
+    if (NodeNetwork.getNodeForID(currentNode).TYPE == Node.PATH_START) {
+      
+      isQueuing = true;
+      personInfront = NodeNetwork.getNodeForID(currentNode).lastPerson;
+      NodeNetwork.getNodeForID(currentNode).lastPerson = this;
+      
+    }
+    
 		if (NodeNetwork.getNodeForID(currentNode).TYPE == Node.BOARD) {
 			
 			Node cn = NodeNetwork.getNodeForID(currentNode);
@@ -152,7 +162,6 @@ public class Person extends Script{
           
 					currentAnim = sitting;
 					boarded = true;
-					NodeNetwork.getNodeForID(currentNode).blocked = true;
           
 				}
 				
@@ -202,17 +211,27 @@ public class Person extends Script{
     
     Node nextNodeTemp = NodeNetwork.getNodeForID(nextNode);
     
-    if (nextNodeTemp.TYPE == Node.PATH_START) {
+    if (nextNodeTemp.TYPE == Node.BOARD) {
       
-      isQueuing = true;
-      personInfront = nextNodeTemp.lastPerson;
-      nextNodeTemp.lastPerson = this;
-      
-      System.out.println(nextNodeTemp.lastPerson);
+     nextNodeTemp.blocked = true;
       
     }
     
-    if (NodeNetwork.getNodeForID(lastNode).TYPE == Node.PATH_END) {
+    if (nextNodeTemp.TYPE == Node.PATH_END && nextNodeTemp.max_batch != -1) {
+      
+      nextNodeTemp.people_batched++;
+      
+      if (nextNodeTemp.people_batched > nextNodeTemp.max_batch) {
+        
+        nextNodeTemp.blocked = true;
+        
+      }
+      
+    }
+    
+    Node lastNodeType = NodeNetwork.getNodeForID(lastNode);
+    
+    if (lastNodeType.TYPE == Node.PATH_END) {
       
       isQueuing = false;
       personInfront = null;
@@ -227,7 +246,7 @@ public class Person extends Script{
 			
 			nextNode = (int)((float)Math.random() * (float)NodeNetwork.nodeCount);
 			
-			while (NodeNetwork.getNodeForID(nextNode).blocked == true || NodeNetwork.getNodeForID(nextNode).TYPE == Node.PATH || NodeNetwork.getNodeForID(nextNode).TYPE == Node.PATH_END || NodeNetwork.getNodeForID(nextNode).TYPE == Node.PATH_START || NodeNetwork.getNodeForID(nextNode).TYPE == Node.BOARD) {
+			while (NodeNetwork.getNodeForID(nextNode).blocked == true || NodeNetwork.getNodeForID(nextNode).TYPE != Node.DEFAULT) {
 				
 				nextNode = (int)((float)Math.random() * (float)NodeNetwork.nodeCount);
 				

@@ -1,0 +1,168 @@
+import com.nolimitscoaster.*;
+import nlvm.math3d.*;
+
+public class Person extends Script {
+  
+  // Constants
+  public static final int UNPLACED = 0;
+  public static final int WALKING = 1;
+  public static final int NOT_MOVING = 2;
+  
+  // Components
+  private SceneObject sco;
+  
+  // Variables
+  private int status;
+  private Vector3f position;
+  private float desiredHeading = 0;
+  private float heading = 0;
+  private float turnRate = 1.0f;
+  private float turnRateQueue = 10.0f;
+  private float walkingSpeed = 1.0f;
+  
+  private Node targetNode;
+  
+  /*
+   * Initalizes the peep
+   */
+	public bool onInit(){
+		
+    // Load sco file into memory
+		sco = sim.getSceneObjectForEntityId(getParentEntityId());
+		
+    status = UNPLACED;
+    
+    position = new Vector3f(0,0,0);
+    
+		return true;
+		
+	}
+	
+  /*
+   * Returns the distance to a peep in meters.
+   */
+	public float getDistanceToPerson(Person p) {
+    
+    Vector3f a = sco.getTranslation();
+    Vector3f b = p.sco.getTranslation();
+    
+    return a.distance(b);
+    
+  }
+  
+  public float getDistanceToNode(Node n) {
+    
+    Vector3f a = sco.getTranslation();
+    Vector3f b = n.getNodePosition();
+    
+    return a.distance(b);
+    
+  }
+	
+  /*
+   * Updates to the peep every frame
+   */
+	public void onNextFrame(float time){
+		
+		switch (status) {
+      // If the peep is not placed in the world
+      case UNPLACED:
+        
+        if (NodeNetwork.sorted) {
+        
+          targetNode = NodeNetwork.getRandomNode();
+          position = targetNode.getNodePosition();
+        
+          setStatus(NOT_MOVING);
+        
+        }
+        
+        break;
+      case WALKING:
+        
+        Vector3f nodePosition = targetNode.getNodePosition();
+        
+        desiredHeading = (float) Math.atan2(nodePosition.x - position.x, nodePosition.z - position.z);
+        
+        /*
+         * Calculate Heading
+         */
+        if (Math.abs(heading-desiredHeading) > Math.PI) {
+          
+          if (heading < desiredHeading) {
+          
+            heading -= turnRate * time;
+          
+          }
+          if (heading > desiredHeading) {
+          
+            heading += turnRate * time;
+          
+          }
+          
+        } else {
+          
+          if (heading < desiredHeading) {
+          
+            heading += turnRate * time;
+          
+          }
+          if (heading > desiredHeading) {
+          
+            heading -= turnRate * time;
+          
+          }
+          
+        }
+        
+        if (heading > Math.PI) {
+          
+          heading -= (float) Math.PI * 2.0f;
+          
+        }
+        
+        if (heading < -Math.PI) {
+          
+          heading += (float) Math.PI * 2.0f;
+          
+        }
+        
+       
+        
+        position.x += (float) Math.sin(heading) * time * walkingSpeed;
+        position.z += (float) Math.cos(heading) * time * walkingSpeed;
+        
+        if (getDistanceToNode(targetNode) < targetNode.RADIUS_OF_ENTRY) {
+          
+          setStatus(NOT_MOVING);
+          
+        }
+        
+        break;
+      case NOT_MOVING:
+        
+        targetNode = targetNode.getRandomConnection();
+        setStatus(WALKING);
+        
+        break;
+      default:
+        break;
+      
+    }
+    
+    sco.setTranslation(position);
+    sco.setRotation(0, heading - (float) Math.PI / 2.0f, 0);
+		
+	}
+  
+  /*
+   * Getters and Setters
+   */
+  public int getStatus() {
+    return status;
+  }
+  public void setStatus(int newStatus) {
+    status = newStatus;
+  }
+	
+}

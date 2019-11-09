@@ -14,8 +14,9 @@ public class Node	{
 	public static final int BOARD = 5;
   public static final int STATION = 6;
   public static final int OFFLOAD = 7;
-  
   public static final bool NODES_VISIBLE = true;
+  
+  public float RADIUS_OF_ENTRY = 2.0f;
   
 	public SceneObject sco;
 	private SceneObjectElement[] scoe = new SceneObjectElement[7];
@@ -126,4 +127,16 @@ public class Node	{
 		
 	}
 	
+  public Vector3f getNodePosition() {
+    
+    return sco.getTranslation();
+    
+  }
+  
+  public Node getRandomConnection() {
+    
+    return connection[(int) (Math.random() * (double) connections)];
+    
+  }
+  
 }

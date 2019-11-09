@@ -1,0 +1,18 @@
+import com.nolimitscoaster.*;
+
+public class StationNodeObject extends Script{
+	
+	private SceneObject sco;
+	private static int id = 0;
+
+	public bool onInit(){
+		
+		sco = sim.getSceneObjectForEntityId(getParentEntityId());
+		NodeNetwork.addNode(new Node(sco, NodeNetwork.nodeCount, Node.STATION));
+		id++;
+	
+		return true;
+		
+	}
+	
+}

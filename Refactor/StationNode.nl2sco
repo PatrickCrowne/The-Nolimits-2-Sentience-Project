@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <sceneobject>
+    <model path="Models/Node.dae"/>
+    <script>
+      <classpath>Scripts</classpath>
+      <class>StationNodeObject</class>
+      <sharedvm>true</sharedvm>
+    </script>
+    <materialpath name="Connection">Materials/Connection.nl2mat</materialpath>
+    <materialpath name="Material">Materials/Node.nl2mat</materialpath>
+  </sceneobject>
+</root>
